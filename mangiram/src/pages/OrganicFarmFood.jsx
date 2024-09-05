@@ -1,0 +1,224 @@
+import React from 'react';
+
+const OrganicFarmFood = () => {
+
+  const products = [
+    {
+      id: 1,
+      title: "organic fruits",
+      items: "52 items",
+      color: "#f8d4d7", // Light red
+      image: "path/to/fruit-icon.png", // Replace with actual image path
+    },
+    {
+      id: 2,
+      title: "fresh vegetables",
+      items: "35 items",
+      color: "#d7e8d4", // Light green
+      image: "path/to/vegetable-icon.png", // Replace with actual image path
+    },
+    {
+      id: 3,
+      title: "organic breads",
+      items: "23 items",
+      color: "#f8e4d4", // Light orange
+      image: "path/to/bread-icon.png", // Replace with actual image path
+    },
+
+   
+  ];
+
+  const containerStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    textAlign: 'center',
+    backgroundColor: '#f9f9f5',
+    padding: '0px',
+  };
+
+  const headerStyle = {
+    color: '#505050',
+    fontSize: '24px',
+    marginBottom: '0px',
+  };
+
+  const subHeaderStyle = {
+    color: '#c7c7c7',
+    fontSize: '14px',
+    marginBottom: '30px',
+  };
+
+  const descriptionStyle = {
+    color: '#7a7a7a',
+    fontSize: '16px',
+    marginBottom: '190px',
+    maxWidth: '700px',
+    position: 'relative',
+    top: '-5px', // Move the description text up
+  };
+
+  const featureContainerStyle = {
+    display: 'flex',
+    justifyContent: 'space-between', // Space between circles
+     // Align circles to the upper side
+    gap: '100px',
+    marginBottom: '40px',
+    width: '100%',
+    maxWidth: '900px',
+    position: 'relative',
+  };
+
+  const featureBoxStyle = {
+    textAlign: 'center',
+    maxWidth: '200px',
+    position: 'relative',
+  };
+
+  const featureIconStyle = {
+    width: '100px',
+    height: '100px',
+    borderRadius: '50%',
+    display: 'inline-block',
+    marginBottom: '20px',
+    position: 'relative',
+  };
+
+  const featureTextHeaderStyle = {
+    fontSize: '16px',
+    color: '#505050',
+    marginBottom: '10px',
+  };
+
+  const featureTextStyle = {
+    color: '#7a7a7a',
+    fontSize: '14px',
+    marginBottom: '20px',
+  };
+
+  const buttonStyle = {
+    backgroundColor: '#ffffff',
+    border: '2px solid #f5f5f5',
+    borderRadius: '20px',
+    padding: '10px 20px',
+    color: '#b5b5b5',
+    cursor: 'pointer',
+    textDecoration: 'none',
+  };
+
+  const imageContainerStyle = {
+    marginTop: '40px',
+  };
+
+  const imageStyle = {
+    width: '750px',
+    height: 'auto',
+  };
+  
+
+  return (
+    <div style={containerStyle}>
+  <div> {/* Add margin to create space between image and heading */}
+    <img 
+      src="/src/images/chotipatti.png" 
+      alt="Chotipatti" 
+    />
+  </div>
+  <h1 style={headerStyle}>we are <span style={{ color: '#000000', fontWeight: 'bold' }}>organic farmfood</span></h1>
+  <h3 style={subHeaderStyle}>----ABOUT NATURIX FARMFOOD----</h3>
+  <p style={descriptionStyle}>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+  </p>
+
+
+
+      <div style={featureContainerStyle}>
+        <div style={featureBoxStyle}>
+          <div style={{ 
+            ...featureIconStyle, 
+            backgroundColor: '#cde4b1',
+            backgroundImage: `url('/src/images/feature-1.png')`, 
+            width: '120px', // Adjust size
+            height: '120px',
+            marginTop: '0px', // Adjust position
+            marginLeft:'-70px',
+          }}></div>
+          <h4 style={{ fontSize: '16px', color: '#505050', marginBottom: '10px', marginLeft: '-60px' }}>fresh from <span style={{ color: '#000000', fontWeight:'bold' }}>naturix farm</span></h4>
+          <p style={{ color: '#7a7a7a', fontSize: '14px', marginBottom: '20px', marginLeft: '-60px' }}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy.
+          </p>
+          <a href="#" style={{ backgroundColor: '#ffffff', border: '2px solid #f5f5f5', borderRadius: '20px', padding: '10px 20px', color: '#b5b5b5', cursor: 'pointer', textDecoration: 'none', marginLeft: '-60px' }}>READ MORE</a>
+        </div>
+
+        <div style={{ 
+          ...featureBoxStyle, 
+          marginTop: '-90px', // Move the 2nd circle slightly above
+        }}>
+          <div style={{ 
+            ...featureIconStyle, 
+            backgroundColor: '#ffeec5',
+            backgroundImage: `url('/src/images/feature-2.png')`,  
+            width: '120px', // Adjust size
+            height: '120px',
+            marginTop: '-20px', // Adjust position
+          }}></div>
+          <h4 style={featureTextHeaderStyle}>100% <span style={{ color: '#000000', fontWeight:'bold' }}>organic goods</span></h4>
+          <p style={featureTextStyle}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy.
+          </p>
+          <a href="#" style={buttonStyle}>READ MORE</a>
+        </div>
+
+        <div style={{ 
+          ...featureBoxStyle, 
+          marginTop: '-90px', // Align the 3rd circle with the 2nd
+        }}>
+          <div style={{ 
+            ...featureIconStyle, 
+            backgroundColor: '#f6baba', 
+            backgroundImage: `url('/src/images/feature-3.png')`, 
+            width: '120px', // Adjust size
+            height: '120px',
+            marginTop: '-20px', // Adjust position 
+            marginRight:'-39px',
+          }}></div>
+          <h4 style={featureTextHeaderStyle}>premium <span style={{ color: '#000000', fontWeight:'bold' }}>quality</span></h4>
+          <p style={featureTextStyle}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy.
+          </p>
+          <a href="#" style={buttonStyle}>READ MORE</a>
+        </div>
+
+        <div style={featureBoxStyle}>
+          <div style={{ 
+            ...featureIconStyle, 
+            backgroundColor: '#f3dac1',
+            backgroundImage: `url('/src/images/feature-4.png')`,  
+            width: '120px', // Adjust size
+            height: '120px',
+            marginRight: '-10px', // Keep position 4th
+            marginTop:'-6px',
+          }}></div>
+          <h4 style={{ ...featureTextHeaderStyle, marginLeft: '5px' }}>100% <span style={{ color: '#000000', fontWeight:'bold' }}>natural</span></h4>
+<p style={{ ...featureTextStyle, marginLeft: '-0px' }}>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy.
+</p>
+<a href="#" style={{ ...buttonStyle, marginLeft: '0px' }}>READ MORE</a>
+        </div>
+      </div>
+
+      <div style={{ ...imageContainerStyle, marginTop: '-85px' }}>
+  <img 
+    src="/src/images/icon-1.png" 
+    alt="Organic Grapefruit" 
+    style={imageStyle} 
+  />
+</div>
+
+
+    </div>
+  );
+};
+
+export default OrganicFarmFood;
