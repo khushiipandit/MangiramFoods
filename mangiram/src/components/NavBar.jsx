@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import logoImage from '/src/images/bg.jpg';
 import cartIcon from '/src/images/bg2.jpg';
 import { Link } from 'react-router-dom';
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -13,7 +14,7 @@ const Navbar = () => {
         setScrolled(false);
       }
     };
-   
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -38,22 +39,28 @@ const Navbar = () => {
   const logoStyle = {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: 'flex-start',
+    marginLeft: '0px', // Align logo and text with same left margin
   };
 
   const logoImgStyle = {
-    height: '40px',
+    height: '50px',
   };
 
   const logoTextStyle = {
     marginTop: '5px',
-    fontSize: '14px',
+    fontSize: '11px',
     color: 'black',
+    textAlign: 'left',
+    marginLeft: '0px', // Align text directly below logo
   };
 
   const navLinksStyle = {
     listStyle: 'none',
     display: 'flex',
+    justifyContent: 'center',
+    flex: '1',
+    marginLeft: '480px',
   };
 
   const navLinkItemStyle = {
@@ -63,19 +70,20 @@ const Navbar = () => {
   const navLinkStyle = {
     textDecoration: 'none',
     color: 'black',
-    fontWeight: 'bold',
   };
 
   const cartStyle = {
     display: 'flex',
     alignItems: 'center',
-    marginRight: '80px',
+    marginRight: '140px',
+    marginLeft: '12px',
+    fontSize: '14px',
   };
 
   const cartIconStyle = {
-    width: '24px',
-    height: '24px',
-    marginRight: '10px',
+    width: '28px',
+    height: '28px',
+    marginRight: '5px',
   };
 
   return (
@@ -86,14 +94,14 @@ const Navbar = () => {
       </div>
       <ul style={navLinksStyle}>
         <li style={navLinkItemStyle}>
-        <Link to="/src/pages/HomePage" style={navLinkStyle}>
-    HOME
-  </Link>
+          <Link to="/src/pages/HomePage" style={navLinkStyle}>
+            HOME
+          </Link>
         </li>
         <li style={navLinkItemStyle}>
-        <Link to="/src/pages/AboutUs" style={navLinkStyle}>
-    ABOUT US
-  </Link>
+          <Link to="/src/pages/AboutUs" style={navLinkStyle}>
+            ABOUT US
+          </Link>
         </li>
         <li style={navLinkItemStyle}>
           <a href="#" style={navLinkStyle}>

@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const Comp2 = () => {
   const products = [

@@ -1,20 +1,23 @@
-import React from 'react';
+
 
 const Comp1 = () => {
   const cardStyle = {
-    width: '200px',
+    maxWidth: '100px', // Increased width to avoid text wrapping
+    padding: '30px',
     textAlign: 'center',
-    padding: '20px',
-    margin: '0 10px',
+    border: '1px solid #eaeaea',
+    margin: '0 5px',
     backgroundColor: '#fff',
     borderRadius: '10px',
     boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+    flex: '1', // Adjusting flex to distribute space evenly
   };
 
   const imageStyle = {
-    width: '80px',
-    height: '80px',
-    margin: 'auto',
+    width: '140px',
+    height: '120px',
+    margin: 'auto -20px 0',
+    
     marginBottom: '10px',
   };
 
@@ -22,6 +25,7 @@ const Comp1 = () => {
     fontSize: '16px',
     fontWeight: 'bold',
     marginBottom: '5px',
+    whiteSpace: 'nowrap', // Prevents line breaks in the text
   };
 
   const itemCountStyle = {
@@ -60,9 +64,9 @@ const Comp1 = () => {
   ];
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between', padding: '50px' }}>
+    <div style={{ display: 'flex', justifyContent: 'center', padding: '50px', gap: '40px', }}>
       {/* Product Cards */}
-      <div style={{ display: 'flex', gap: '20px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flex: '1' }}>
         {products.map((product, index) => (
           <div key={index} style={cardStyle}>
             <img src={product.image} alt={product.title} style={imageStyle} />
@@ -73,7 +77,7 @@ const Comp1 = () => {
       </div>
 
       {/* Right Section */}
-      <div style={{ maxWidth: '400px' }}>
+      <div style={{ maxWidth: '1500px', marginLeft: 'auto', flex: '1', textAlign: 'left' ,marginRight:'100px'}}>
         <h2 style={{ color: '#999', textTransform: 'uppercase', fontSize: '14px', letterSpacing: '1px' }}>
           Fresh from our farm
         </h2>

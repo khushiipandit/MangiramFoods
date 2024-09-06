@@ -1,59 +1,74 @@
-import React from 'react';
+
 
 const OrganicFarmFood = () => {
 
-  const products = [
-    {
-      id: 1,
-      title: "organic fruits",
-      items: "52 items",
-      color: "#f8d4d7", // Light red
-      image: "path/to/fruit-icon.png", // Replace with actual image path
-    },
-    {
-      id: 2,
-      title: "fresh vegetables",
-      items: "35 items",
-      color: "#d7e8d4", // Light green
-      image: "path/to/vegetable-icon.png", // Replace with actual image path
-    },
-    {
-      id: 3,
-      title: "organic breads",
-      items: "23 items",
-      color: "#f8e4d4", // Light orange
-      image: "path/to/bread-icon.png", // Replace with actual image path
-    },
+  // const products = [
+  //   {
+  //     id: 1,
+  //     title: "organic fruits",
+  //     items: "52 items",
+  //     color: "#f8d4d7", // Light red
+  //     image: "path/to/fruit-icon.png", // Replace with actual image path
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "fresh vegetables",
+  //     items: "35 items",
+  //     color: "#d7e8d4", // Light green
+  //     image: "path/to/vegetable-icon.png", // Replace with actual image path
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "organic breads",
+  //     items: "23 items",
+  //     color: "#f8e4d4", // Light orange
+  //     image: "path/to/bread-icon.png", // Replace with actual image path
+  //   },
 
    
-  ];
+  // ];
 
   const containerStyle = {
     display: 'flex',
+    height:'1100px',
     flexDirection: 'column',
     alignItems: 'center',
     textAlign: 'center',
     backgroundColor: '#f9f9f5',
     padding: '0px',
   };
+  const container_image_Style = {
+    height:'11px',
+    marginTop:'100px',
+    marginBottom:'0px',
+    marginLeft:'35px'
+
+  }
 
   const headerStyle = {
     color: '#505050',
-    fontSize: '24px',
+    fontSize:'45px',
+    marginTop:'0px',
     marginBottom: '0px',
+   
+  };
+  const headerStyle2 = {
+    color: '#515153',
+    fontWeight: 'bold',
+    fontsize:'10px'
   };
 
   const subHeaderStyle = {
-    color: '#c7c7c7',
-    fontSize: '14px',
-    marginBottom: '30px',
+    color: '#515153',
+    fontSize: '15px',
+    marginBottom: '30px'
   };
 
   const descriptionStyle = {
     color: '#7a7a7a',
-    fontSize: '16px',
+    fontSize: '20px',
     marginBottom: '190px',
-    maxWidth: '700px',
+    maxWidth: '1000px',
     position: 'relative',
     top: '-5px', // Move the description text up
   };
@@ -62,37 +77,39 @@ const OrganicFarmFood = () => {
     display: 'flex',
     justifyContent: 'space-between', // Space between circles
      // Align circles to the upper side
-    gap: '100px',
+    gap: '10px',
     marginBottom: '40px',
     width: '100%',
-    maxWidth: '900px',
+    maxWidth: '1000px',
     position: 'relative',
   };
 
   const featureBoxStyle = {
     textAlign: 'center',
-    maxWidth: '200px',
+    maxWidth: '220px',
     position: 'relative',
   };
 
   const featureIconStyle = {
-    width: '100px',
-    height: '100px',
+    width: '120px',
+    height: '120px',
     borderRadius: '50%',
     display: 'inline-block',
     marginBottom: '20px',
     position: 'relative',
+    
   };
 
   const featureTextHeaderStyle = {
-    fontSize: '16px',
+    fontSize: '18px',
     color: '#505050',
     marginBottom: '10px',
   };
 
   const featureTextStyle = {
     color: '#7a7a7a',
-    fontSize: '14px',
+    fontSize: '16px',
+    maxWidth:'700px',
     marginBottom: '20px',
   };
 
@@ -118,13 +135,13 @@ const OrganicFarmFood = () => {
 
   return (
     <div style={containerStyle}>
-  <div> {/* Add margin to create space between image and heading */}
+  <div style={container_image_Style}> {/* Add margin to create space between image and heading { color: '#000000', fontWeight: 'bold',fontsize:'150px' }*/}
     <img 
       src="/src/images/chotipatti.png" 
       alt="Chotipatti" 
     />
   </div>
-  <h1 style={headerStyle}>we are <span style={{ color: '#000000', fontWeight: 'bold' }}>organic farmfood</span></h1>
+  <h1 style={headerStyle}>we are <span style={headerStyle2}>organic farmfood</span></h1>
   <h3 style={subHeaderStyle}>----ABOUT NATURIX FARMFOOD----</h3>
   <p style={descriptionStyle}>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
@@ -137,7 +154,7 @@ const OrganicFarmFood = () => {
         <div style={featureBoxStyle}>
           <div style={{ 
             ...featureIconStyle, 
-            backgroundColor: '#cde4b1',
+            
             backgroundImage: `url('/src/images/feature-1.png')`, 
             width: '120px', // Adjust size
             height: '120px',
@@ -145,7 +162,7 @@ const OrganicFarmFood = () => {
             marginLeft:'-70px',
           }}></div>
           <h4 style={{ fontSize: '16px', color: '#505050', marginBottom: '10px', marginLeft: '-60px' }}>fresh from <span style={{ color: '#000000', fontWeight:'bold' }}>naturix farm</span></h4>
-          <p style={{ color: '#7a7a7a', fontSize: '14px', marginBottom: '20px', marginLeft: '-60px' }}>
+          <p style={{ color: '#7a7a7a', fontSize: '16px', marginBottom: '20px', marginLeft: '-60px', maxWidth:'700px',}}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy.
           </p>
           <a href="#" style={{ backgroundColor: '#ffffff', border: '2px solid #f5f5f5', borderRadius: '20px', padding: '10px 20px', color: '#b5b5b5', cursor: 'pointer', textDecoration: 'none', marginLeft: '-60px' }}>READ MORE</a>
@@ -154,10 +171,12 @@ const OrganicFarmFood = () => {
         <div style={{ 
           ...featureBoxStyle, 
           marginTop: '-90px', // Move the 2nd circle slightly above
+          maxWidth:'700px',
+          fontsize:'16px'
         }}>
           <div style={{ 
             ...featureIconStyle, 
-            backgroundColor: '#ffeec5',
+            
             backgroundImage: `url('/src/images/feature-2.png')`,  
             width: '120px', // Adjust size
             height: '120px',
@@ -176,15 +195,15 @@ const OrganicFarmFood = () => {
         }}>
           <div style={{ 
             ...featureIconStyle, 
-            backgroundColor: '#f6baba', 
+           
             backgroundImage: `url('/src/images/feature-3.png')`, 
             width: '120px', // Adjust size
             height: '120px',
             marginTop: '-20px', // Adjust position 
-            marginRight:'-39px',
+            marginRight:'-10px',
           }}></div>
           <h4 style={featureTextHeaderStyle}>premium <span style={{ color: '#000000', fontWeight:'bold' }}>quality</span></h4>
-          <p style={featureTextStyle}>
+          <p style={{ ...featureTextStyle, width:'100%' ,}}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy.
           </p>
           <a href="#" style={buttonStyle}>READ MORE</a>
@@ -193,7 +212,7 @@ const OrganicFarmFood = () => {
         <div style={featureBoxStyle}>
           <div style={{ 
             ...featureIconStyle, 
-            backgroundColor: '#f3dac1',
+            
             backgroundImage: `url('/src/images/feature-4.png')`,  
             width: '120px', // Adjust size
             height: '120px',
@@ -201,7 +220,7 @@ const OrganicFarmFood = () => {
             marginTop:'-6px',
           }}></div>
           <h4 style={{ ...featureTextHeaderStyle, marginLeft: '5px' }}>100% <span style={{ color: '#000000', fontWeight:'bold' }}>natural</span></h4>
-<p style={{ ...featureTextStyle, marginLeft: '-0px' }}>
+<p style={{ ...featureTextStyle, marginLeft: '-0px' ,}}>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy.
 </p>
 <a href="#" style={{ ...buttonStyle, marginLeft: '0px' }}>READ MORE</a>
@@ -210,7 +229,7 @@ const OrganicFarmFood = () => {
 
       <div style={{ ...imageContainerStyle, marginTop: '-85px' }}>
   <img 
-    src="/src/images/icon-1.png" 
+    src="/src/images/feature.png" 
     alt="Organic Grapefruit" 
     style={imageStyle} 
   />
