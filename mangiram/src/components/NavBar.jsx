@@ -1,7 +1,8 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import logoImage from '/src/images/bg.jpg';
 import cartIcon from '/src/images/bg2.jpg';
 import { Link } from 'react-router-dom';
+
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -45,6 +46,7 @@ const Navbar = () => {
 
   const logoImgStyle = {
     height: '50px',
+    cursor: 'pointer',
   };
 
   const logoTextStyle = {
@@ -53,6 +55,7 @@ const Navbar = () => {
     color: 'black',
     textAlign: 'left',
     marginLeft: '0px', // Align text directly below logo
+    display: scrolled ? 'none' : 'block', // Hide the text when scrolled
   };
 
   const navLinksStyle = {
@@ -60,7 +63,7 @@ const Navbar = () => {
     display: 'flex',
     justifyContent: 'center',
     flex: '1',
-    marginLeft: '480px',
+    marginLeft: '450px',
   };
 
   const navLinkItemStyle = {
@@ -75,15 +78,25 @@ const Navbar = () => {
   const cartStyle = {
     display: 'flex',
     alignItems: 'center',
-    marginRight: '140px',
+    marginRight: '20px', // Adjusted margin to make room for the menu icon
     marginLeft: '12px',
     fontSize: '14px',
+    cursor: 'pointer',
   };
 
   const cartIconStyle = {
     width: '28px',
     height: '28px',
     marginRight: '5px',
+  };
+
+  // Style for the menu icon
+  const menuIconStyle = {
+    width: '30px', // You can adjust the size as per your design
+    height: '30px',
+    cursor: 'pointer',
+    marginRight:'70px',
+    marginLeft:'80px'
   };
 
   return (
@@ -128,6 +141,12 @@ const Navbar = () => {
         <img src={cartIcon} alt="Cart Icon" style={cartIconStyle} />
         <span>$2,170.00</span>
       </div>
+      {/* Menu icon on the far right */}
+      <img 
+        src="/src/images/menu.png" // Replace with your menu icon image path
+        alt="Menu Icon"
+        style={menuIconStyle}
+      />
     </nav>
   );
 };

@@ -1,36 +1,40 @@
-
+import React from 'react';
 
 const OrganicFarmFood = () => {
 
-  // const products = [
-  //   {
-  //     id: 1,
-  //     title: "organic fruits",
-  //     items: "52 items",
-  //     color: "#f8d4d7", // Light red
-  //     image: "path/to/fruit-icon.png", // Replace with actual image path
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "fresh vegetables",
-  //     items: "35 items",
-  //     color: "#d7e8d4", // Light green
-  //     image: "path/to/vegetable-icon.png", // Replace with actual image path
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "organic breads",
-  //     items: "23 items",
-  //     color: "#f8e4d4", // Light orange
-  //     image: "path/to/bread-icon.png", // Replace with actual image path
-  //   },
+  const products = [
+    {
+      id: 1,
+      title: "organic fruits",
+      items: "52 items",
+      color: "#f8d4d7", // Light red
+      image: "path/to/fruit-icon.png", // Replace with actual image path
+    },
+    {
+      id: 2,
+      title: "fresh vegetables",
+      items: "35 items",
+      color: "#d7e8d4", // Light green
+      image: "path/to/vegetable-icon.png", // Replace with actual image path
+    },
+    {
+      id: 3,
+      title: "organic breads",
+      items: "23 items",
+      color: "#f8e4d4", // Light orange
+      image: "path/to/bread-icon.png", // Replace with actual image path
+    },
 
    
-  // ];
+  ];
 
   const containerStyle = {
     display: 'flex',
     height:'1100px',
+    width:'100%',
+    marginLeft:'0px',
+    marginRight:'0px',
+    
     flexDirection: 'column',
     alignItems: 'center',
     textAlign: 'center',
@@ -66,9 +70,9 @@ const OrganicFarmFood = () => {
 
   const descriptionStyle = {
     color: '#7a7a7a',
-    fontSize: '20px',
+    fontSize: '17px',
     marginBottom: '190px',
-    maxWidth: '1000px',
+    maxWidth: '900px',
     position: 'relative',
     top: '-5px', // Move the description text up
   };
@@ -131,10 +135,38 @@ const OrganicFarmFood = () => {
     width: '750px',
     height: 'auto',
   };
+  const leafStyleLeft = {
+    position: 'absolute',
+    left: '0',
+    top: '150px',
+    width: '150px', // Adjust size as per design
+    height: 'auto',
+  };
+
+  const leafStyleRight = {
+    position: 'absolute',
+    right: '0',
+    top: '450px',
+    width: '140px', // Adjust size as per design
+    height: 'auto',
+  };
   
 
   return (
     <div style={containerStyle}>
+      {/* Placeholder for the left leaf image */}
+      <img 
+        src="/src/images/left_mint_leave.png" 
+        alt="Left Leaf" 
+        style={leafStyleLeft} 
+      />
+
+      {/* Placeholder for the right leaf image */}
+      <img 
+        src="/src/images/right_mint_leave.png" 
+        alt="Right Leaf" 
+        style={leafStyleRight} 
+      />
   <div style={container_image_Style}> {/* Add margin to create space between image and heading { color: '#000000', fontWeight: 'bold',fontsize:'150px' }*/}
     <img 
       src="/src/images/chotipatti.png" 

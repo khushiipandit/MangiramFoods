@@ -1,7 +1,7 @@
-import React from 'react';
+
 import NavBar from '/src/components/NavBar';
 
-import Comp1 from '../components/comp1';
+import Comp1 from '../components/Comp1';
 import Comp2 from '../components/Comp2';
 
 const HomePage = () => {

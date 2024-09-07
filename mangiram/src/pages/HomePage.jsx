@@ -1,8 +1,10 @@
-import React from 'react';
+
 import NavBar from '/src/components/NavBar';
 import OrganicFarmFood from '/src/pages/OrganicFarmFood';
-import Comp1 from '../components/comp1';
+import Comp1 from '../components/Comp1';
 import Comp2 from '../components/Comp2';
+import Comp3 from '../components/Comp3';
+import Comp4 from '../components/Comp4';
 
 const HomePage = () => {
     return (
@@ -13,16 +15,23 @@ const HomePage = () => {
             </div>
 
             {/* Content Section */}
-            <div style={{ marginTop: '60px', flexGrow: 1, padding: '20px' }}>
+            <div style={{ marginTop: '60px', flexGrow: 1, paddingTop:'20px' }}>
                 <OrganicFarmFood />
             </div>
 
-            <div style={{ marginTop: '60px', flexGrow: 1, padding: '2px' }}>
+            <div style={{ marginTop: '140px', flexGrow: 1, padding: '2px',marginLeft:'100px' }}>
                 <Comp1 />
             </div>
-            <div style={{ marginTop: '5px', flexGrow: 1, padding: '1px' }}>
+            <div style={{ marginTop: '5px', flexGrow: 1, padding: '3px',marginLeft:'3px',marginRight:'5px' }}>
                 <Comp2 />
-            </div>
+            </div>   
+
+             <div style={{ marginTop: '5px', flexGrow: 1, padding: '3px',marginLeft:'0px',marginRight:'0px' }}>
+                <Comp3 />
+            </div>   
+            <div style={{ marginTop: '5px', flexGrow: 1, padding: '3px',marginLeft:'63px',marginRight:'px' }}>
+                <Comp4 />
+            </div>         
         </div>
     );
 };

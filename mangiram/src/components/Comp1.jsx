@@ -1,30 +1,39 @@
-
+import  { useState } from 'react';
 
 const Comp1 = () => {
-  const cardStyle = {
-    maxWidth: '100px', // Increased width to avoid text wrapping
-    padding: '30px',
+  const [hoverIndex, setHoverIndex] = useState(null); // State to track which card is hovered
+
+  const cardStyle = (isHovered) => ({
+    Width: '219px',
+    height:'281px',
+    padding: '8px',
+    
     textAlign: 'center',
-    border: '1px solid #eaeaea',
+    border: `1px solid ${isHovered ? 'green' : '#eaeaea'}`, // Green border on hover
     margin: '0 5px',
     backgroundColor: '#fff',
     borderRadius: '10px',
-    boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-    flex: '1', // Adjusting flex to distribute space evenly
-  };
+    flex: '1',
+    boxShadow: isHovered
+      ? '0 8px 16px rgba(0, 128, 0, 0.3)' // Green shadow on hover
+      : 'none', // No shadow by default
+    transition: 'border-color 0.3s, box-shadow 0.3s', // Smooth transition
+  });
 
   const imageStyle = {
     width: '140px',
     height: '120px',
-    margin: 'auto -20px 0',
+    marginLeft: ' 3px ',
+    marginTop:'17px',
     
-    marginBottom: '10px',
+    marginBottom: '40px',
   };
 
   const titleStyle = {
     fontSize: '16px',
     fontWeight: 'bold',
     marginBottom: '5px',
+    marginLeft:'-15px',
     whiteSpace: 'nowrap', // Prevents line breaks in the text
   };
 
@@ -34,14 +43,15 @@ const Comp1 = () => {
   };
 
   const sectionTitleStyle = {
-    fontSize: '36px',
+    fontSize: '40px',
     fontWeight: 'bold',
     marginBottom: '10px',
+    marginTop:'10px'
   };
 
   const descriptionStyle = {
     color: '#666',
-    fontSize: '16px',
+    fontSize: '18px',
     lineHeight: '1.6',
   };
 
@@ -64,11 +74,16 @@ const Comp1 = () => {
   ];
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', padding: '50px', gap: '40px', }}>
+    <div style={{ display: 'flex', justifyContent: 'center', padding: '50px', gap: '40px' }}>
       {/* Product Cards */}
       <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flex: '1' }}>
         {products.map((product, index) => (
-          <div key={index} style={cardStyle}>
+          <div
+            key={index}
+            style={cardStyle(hoverIndex === index)} // Apply hover styles dynamically
+            onMouseEnter={() => setHoverIndex(index)} // Set hover index on mouse enter
+            onMouseLeave={() => setHoverIndex(null)} // Remove hover index on mouse leave
+          >
             <img src={product.image} alt={product.title} style={imageStyle} />
             <h3 style={titleStyle}>{product.title}</h3>
             <p style={itemCountStyle}>{product.items}</p>
@@ -77,12 +92,14 @@ const Comp1 = () => {
       </div>
 
       {/* Right Section */}
-      <div style={{ maxWidth: '1500px', marginLeft: 'auto', flex: '1', textAlign: 'left' ,marginRight:'100px'}}>
+      <div style={{ maxWidth: '1500px', marginLeft: 'auto', flex: '1', textAlign: 'left', marginRight: '100px',marginTop:'2px' }}>
         <h2 style={{ color: '#999', textTransform: 'uppercase', fontSize: '14px', letterSpacing: '1px' }}>
           Fresh from our farm
         </h2>
         <h1 style={sectionTitleStyle}>
-          220+ <span style={{ fontWeight: 'normal' }}>fruits, vegetables</span> & lot more
+          <span style={{ fontWeight: 'normal' }}>220+ </span>
+          <span style={{ fontWeight: 'bold' }}>fruits, vegetables</span>
+          <span style={{ fontWeight: 'normal' }}> &</span> lot more
         </h1>
         <p style={descriptionStyle}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
