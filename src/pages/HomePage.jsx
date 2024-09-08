@@ -1,10 +1,10 @@
-
 import NavBar from '/src/components/NavBar';
 import OrganicFarmFood from '/src/pages/OrganicFarmFood';
 import Comp1 from '../components/Comp1';
 import Comp2 from '../components/Comp2';
 import Comp3 from '../components/Comp3';
 import Comp4 from '../components/Comp4';
+import Hero from "../components/Hero";
 
 const HomePage = () => {
     return (
@@ -13,9 +13,9 @@ const HomePage = () => {
             <div style={{ position: 'fixed', top: 0, width: '100%', zIndex: 1000 }}>
                 <NavBar />
             </div>
-
+            <Hero />
             {/* Content Section */}
-            <div style={{ marginTop: '60px', flexGrow: 1, paddingTop:'20px' }}>
+            <div style={{ marginTop: '0px', flexGrow: 1, paddingTop:'0px' }}>
                 <OrganicFarmFood />
             </div>
 
