@@ -5,20 +5,25 @@ import Comp2 from '../components/Comp2';
 import Comp3 from '../components/Comp3';
 import Comp4 from '../components/Comp4';
 import Hero from "../components/Hero";
+import Footer from "../components/Footer";
+
+import {Products} from "../components/Products";
 
 const HomePage = () => {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
             {/* NavBar Component */}
-            <div style={{ position: 'fixed', top: 0, width: '100%', zIndex: 1000 }}>
+            {/* <div style={{ position: 'fixed', top: 0, width: '100%', zIndex: 1000 }}>
                 <NavBar />
-            </div>
+            </div> */}
             <Hero />
+<Products/>
+
             {/* Content Section */}
             <div style={{ marginTop: '0px', flexGrow: 1, paddingTop:'0px' }}>
                 <OrganicFarmFood />
             </div>
-
+        
             <div style={{ marginTop: '140px', flexGrow: 1, padding: '2px',marginLeft:'100px' }}>
                 <Comp1 />
             </div>
@@ -31,7 +36,8 @@ const HomePage = () => {
             </div>   
             <div style={{ marginTop: '5px', flexGrow: 1, padding: '3px',marginLeft:'63px',marginRight:'px' }}>
                 <Comp4 />
-            </div>         
+            </div> 
+            {/* <Footer/>         */}
         </div>
     );
 };

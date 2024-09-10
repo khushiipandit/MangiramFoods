@@ -95,7 +95,7 @@ const Comp3 = () => {
     return (
         <div style={styles.dealContainer}>
             <div style={styles.dealText}>
-                <h5 style={styles.dealTextH5}>NATURIX DEAL OF THE DAY</h5>
+                <h5 style={styles.dealTextH5}>Mangiram DEAL OF THE DAY</h5>
                 <h1 style={styles.dealTextH1}>
                     organic goods <span style={styles.discount}>50% off</span>
                 </h1>
