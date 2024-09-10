@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
+
+
 const Hero = () => {
   return (
     <div className="relative h-screen flex items-center justify-center flex-col">
@@ -20,7 +24,7 @@ const Hero = () => {
          Organic Fruites,Vegetables, And Lot More to Your Door
         </p>
 
-        <button className='px-8 py-2 mt-12 rounded-full uppercase bg-white text-[#222] border-[6px] border-[#86CDB5] text-base hover:bg-[#86CDB5] font-medium tracking-tight transition duration-300 hover:text-white'>Shop Now</button>
+        <Link className='px-8 py-2 mt-20 rounded-full uppercase bg-white text-[#222] border-[6px] border-[#86CDB5] text-base hover:bg-[#86CDB5] font-medium tracking-tight transition duration-300 hover:text-white' to="/shop">Shop Now</Link>
       </div>
     </div>
   );

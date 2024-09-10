@@ -56,11 +56,11 @@ const ContactPage = () => {
 
           {/* Address details */}
           <div className="w-full md:w-1/3">
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">Naturix Address</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Mangiram Address</h2>
             <p className="text-sm text-gray-600 mb-6">ORGANIC STORE</p>
 
             <div className="space-y-4 text-gray-700">
-              <p className="font-semibold text-green-600">NATURIX STORE</p>
+              <p className="font-semibold text-green-600">Mangiram STORE</p>
               <p>142 West newton, NY 19088, United States</p>
 
               <div>

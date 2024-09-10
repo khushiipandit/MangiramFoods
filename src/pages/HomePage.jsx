@@ -8,6 +8,7 @@ import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 
 import {Products} from "../components/Products";
+import ProductsShowcase from '../components/ProductsShowcase';
 
 const HomePage = () => {
     return (
@@ -37,6 +38,10 @@ const HomePage = () => {
             <div style={{ marginTop: '5px', flexGrow: 1, padding: '3px',marginLeft:'63px',marginRight:'px' }}>
                 <Comp4 />
             </div> 
+
+            <ProductsShowcase/>
+
+
             {/* <Footer/>         */}
         </div>
     );

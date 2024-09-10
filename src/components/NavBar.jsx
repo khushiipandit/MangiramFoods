@@ -78,14 +78,14 @@ const Navbar = () => {
     margin: 0,
   };
 
-  const navLinkItemStyle = {
+  const navLinkItemStyle = (path) => ({
     marginLeft: '1.25rem',
     transition: 'color 0.1s ease',
-    fontWeight:'500',
-    letterSpacing:'-0.25px',
-    color:'#3c3c3c',
-    fontSize:'1rem'
-  };
+    fontWeight: '500',
+    letterSpacing: '-0.25px',
+    color: location.pathname === path ? '#22c55e' : '#3c3c3c', // green-500 if active
+    fontSize: '1rem'
+  });
 
   const navLinkStyle = {
     textDecoration: 'none',
@@ -119,22 +119,22 @@ const Navbar = () => {
       </div>
       <div className='flex items-center gap-8'>
         <ul style={navLinksStyle}>
-          <li style={navLinkItemStyle}>
+          <li style={navLinkItemStyle('/')}>
             <Link to="/" style={navLinkStyle}>
               HOME
             </Link>
           </li>
-          <li style={navLinkItemStyle}>
+          <li style={navLinkItemStyle('/about')}>
             <Link to="/about" style={navLinkStyle}>
               ABOUT US
             </Link>
           </li>
-          <li style={navLinkItemStyle}>
+          <li style={navLinkItemStyle('/shop')}>
             <Link to="/shop" style={navLinkStyle}>
               SHOP
             </Link>
           </li>
-          <li style={navLinkItemStyle}>
+          <li style={navLinkItemStyle('/contact')}>
             <Link to="/contact" style={navLinkStyle}>
               CONTACT US
             </Link>

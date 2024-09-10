@@ -173,10 +173,7 @@ const Comp4 = () => {
           <ProductCard key={index} product={product} />
         ))}
       </Slider>
-      <div style={styles.footer}>
-        <img style={styles.footerImage} src="src\images\feature.png" alt="Grapefruit" /> {/* Replace with actual image */}
-        <div>⭐ a taste of <strong>real food</strong> ⭐</div>
-      </div>
+    
     </div>
   );
 };

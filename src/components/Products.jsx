@@ -2,6 +2,8 @@
   import Slider from 'react-slick';
   import 'slick-carousel/slick/slick.css';
   import 'slick-carousel/slick/slick-theme.css';
+import { Link } from 'react-router-dom';
+
 
   export const ProductCard = ({ product }) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -107,13 +109,16 @@
             </div>
           </div>
           
-          <Slider {...sliderSettings}>
             {filteredProducts.map((product) => (
               <div key={product.id} className="p-2">
                 <ProductCard product={product} />
               </div>
             ))}
-          </Slider>
+         <div className='w-full flex justify-center items-center mt-4'>
+<button className="px-8 py-2 text-lg font-medium text-black border border-green-500 rounded-full block m-auto hover:bg-green-500 hover:text-white transition">
+  <Link to="/shop" >View More</Link>
+  </button>
+</div>
         </div>
       </div>
     );
