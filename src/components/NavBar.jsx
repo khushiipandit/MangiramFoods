@@ -52,10 +52,11 @@ const Navbar = () => {
   const logoTextStyle = {
     marginTop: '5px',
     fontSize: '11px',
-    color: 'black',
+    color: scrolled ? 'white' : 'black',
     textAlign: 'left',
     marginLeft: '0px', // Align text directly below logo
-    display: scrolled ? 'none' : 'block', // Hide the text when scrolled
+    marginBottom:'2px',
+    
   };
 
   const navLinksStyle = {
@@ -117,9 +118,9 @@ const Navbar = () => {
           </Link>
         </li>
         <li style={navLinkItemStyle}>
-          <a href="#" style={navLinkStyle}>
+        <Link to="/src/pages/Shop" style={navLinkStyle}>
             SHOP
-          </a>
+          </Link>
         </li>
         <li style={navLinkItemStyle}>
           <a href="#" style={navLinkStyle}>

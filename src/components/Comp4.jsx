@@ -2,28 +2,33 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { CgOverflow } from 'react-icons/cg';
 
 const ProductCard = ({ product }) => {
   const styles = {
     card: {
       width: '400px',
+      height:'300px',
       padding: '20px',
-      backgroundColor: '#F9F9F9',
+      backgroundColor: 'white',
+      marginLeft:'40px',
+      marginRight:'40px',
       borderRadius: '10px',
       boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
       position: 'relative',
-      display: 'flex',
-      flexDirection: 'row',
-      gap: '20px',
+      Overflow:'visible',
+    justifyContent: 'space-between',
+      
+      gap: '200px',
       alignItems: 'center',
     },
     leftIcons: {
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'space-between',
+      
       alignItems: 'center',
       paddingRight: '10px',
-      borderRight: '1px solid #E6E6E6',
+      borderRight: '1px solid black',
       gap: '10px',
     },
     icon: {
@@ -79,8 +84,11 @@ const ProductCard = ({ product }) => {
       color: '#888',
     },
     productImage: {
-      height: '80px',
+      position:'relative',
+      top:'7px',
+      height: '200px',
       marginLeft: 'auto',
+      zindex:'1'
     },
   };
 
@@ -104,7 +112,10 @@ const ProductCard = ({ product }) => {
         </div>
       </div>
       <img src={product.imageSrc} alt={product.name} style={styles.productImage} />
+      
     </div>
+
+    
   );
 };
 
@@ -120,13 +131,15 @@ const Comp4 = () => {
     },
     footer: {
       textAlign: 'center',
-      marginTop: '50px',
+      marginTop: '-40px',
+      marginLeft:'50px',
       color: '#666',
       fontWeight: 'bold',
       fontSize: '14px',
     },
-    footerImage: {
-      height: '50px',
+    footer_image: {
+      height: '80px',
+      marginLeft:'720px',
       alignItems: 'center',
     },
   };
@@ -168,14 +181,23 @@ const Comp4 = () => {
 
   return (
     <div>
-      <Slider {...sliderSettings} style={styles.container}>
+
+      
+      <div {...sliderSettings} style={styles.container}>
         {products.map((product, index) => (
           <ProductCard key={index} product={product} />
         ))}
-      </Slider>
+
+      </div>
+      <div style={{ marginTop: '90px', color:'#f9f9ff9'}}>
+          <img src="/src/images/spinach.png" alt="Organic Vegetables" style={{ width: '300px', maxWidth: '100%',marginLeft:'30px' }} />
+         </div>
+
+
       <div style={styles.footer}>
-        <img style={styles.footerImage} src="src\images\feature.png" alt="Grapefruit" /> {/* Replace with actual image */}
-        <div>⭐ a taste of <strong>real food</strong> ⭐</div>
+          {/* Bottom grapefruit image */}
+          <img src="/src/images/icon-1.png" alt="Grapefruit" style={styles.footer_image} />
+        <div>⭐⭐⭐ a taste of <strong>real food</strong>⭐⭐ ⭐</div>
       </div>
     </div>
   );

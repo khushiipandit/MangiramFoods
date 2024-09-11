@@ -5,6 +5,7 @@ import Comp1 from '../components/Comp1';
 import Comp2 from '../components/Comp2';
 import Comp3 from '../components/Comp3';
 import Comp4 from '../components/Comp4';
+import Footer from '/src/components/Footer';
 
 const HomePage = () => {
     return (
@@ -29,9 +30,12 @@ const HomePage = () => {
              <div style={{ marginTop: '5px', flexGrow: 1, padding: '3px',marginLeft:'0px',marginRight:'0px' }}>
                 <Comp3 />
             </div>   
-            <div style={{ marginTop: '5px', flexGrow: 1, padding: '3px',marginLeft:'63px',marginRight:'px' }}>
+            <div style={{ marginTop: '-5px', flexGrow: 1, padding: '3px',marginLeft:'-63px',marginRight:'-63px' ,height:'620px',backgroundColor:'#f9f9f9'}}>
                 <Comp4 />
-            </div>         
+            </div>  
+            <div style={{ marginTop: '165px', flexGrow: 1, padding: '3px',marginLeft:'0px',height:'320px',backgroundColor:'#f9f9f9',marginRight:'0px'}}>
+            <Footer />
+            </div> 
         </div>
     );
 };
