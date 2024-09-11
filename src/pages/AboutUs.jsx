@@ -1,10 +1,10 @@
-import React from 'react';
+// import React from 'react';
 import Comp1 from '../components/Comp1';
-import OrganicFarmFood from './OrganicFarmFood';
+// import OrganicFarmFood from './OrganicFarmFood';
 import Comp5 from '../components/Comp5';
-import Comp3 from '../components/Comp3';
+// import Comp3 from '../components/Comp3';
 import Comp2 from '../components/Comp2';
-import Footer from '/src/components/Footer';
+// import Footer from '/src/components/Footer';
 
 const AboutPage = () => {
   const styles = {
@@ -356,7 +356,7 @@ const AboutPage = () => {
             </div>
       
       <Comp2 />
-      <Footer />
+{/*  */}
     </div>
   );
 };

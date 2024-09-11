@@ -1,26 +1,35 @@
-
-
-// import OrganicFarmFood from "./pages/OrganicFarmFood";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import HomePage from "./pages/HomePage";
-import Navbar from "/src/components/NavBar";
+import AboutUs from "./pages/AboutUs";
+import ContactPage from "./pages/ContactPage";
+import Navbar from "./components/NavBar";
+import Footer from "./components/Footer";
+
+
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import AboutUs from "/src/pages/AboutUs";
+
 import Shop from "./pages/Shop";
-function App(){
+import AboutPage from "/src/pages/AboutUs";
+
+
+function App() {
     return (
         <Router>
-        <div className="App">
+            <div className="App">
             <Navbar />
-            
-            <Routes>
-         
-          <Route path="/src/pages/HomePage" element={<HomePage />} />
-         
-          <Route path="/src/pages/AboutUs" element={<AboutUs />} />
-          <Route path="/src/pages/Shop" element={<Shop />} />
-           </Routes>
-        </div>
-       </Router>
+
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/about" element={<AboutUs />} />
+                    <Route path="/shop" element={<Shop />} />
+
+                    <Route path="/contact" element={<ContactPage />} />
+                </Routes>
+<Footer/>
+            </div>
+        </Router>
     );
 }
+
 export default App;

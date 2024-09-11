@@ -4,7 +4,7 @@ import OrganicFarmFood from './OrganicFarmFood';
 import Comp5 from '../components/Comp5';
 import Comp3 from '../components/Comp3';
 import Comp2 from '../components/Comp2';
-import Footer from '/src/components/Footer';
+
 
 const Shop = () => {
   const [price, setPrice] = useState(500);
@@ -255,9 +255,7 @@ marginTop:'10px'
         </div>
       ))}
     </div>
-    <div style={{ marginTop: '165px', flexGrow: 1, padding: '3px',marginLeft:'0px',marginRight:'-63px' ,height:'320px',backgroundColor:'#f9f9f9',marginRight:'0px'}}>
-            <Footer />
-            </div> 
+    
     </div>
   );
 };

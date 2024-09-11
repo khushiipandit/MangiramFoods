@@ -174,7 +174,7 @@ const OrganicFarmFood = () => {
     />
   </div>
   <h1 style={headerStyle}>we are <span style={headerStyle2}>organic farmfood</span></h1>
-  <h3 style={subHeaderStyle}>----ABOUT NATURIX FARMFOOD----</h3>
+  <h3 style={subHeaderStyle}>----ABOUT Mangiram FARMFOOD----</h3>
   <p style={descriptionStyle}>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
     Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
@@ -193,7 +193,7 @@ const OrganicFarmFood = () => {
             marginTop: '0px', // Adjust position
             marginLeft:'-70px',
           }}></div>
-          <h4 style={{ fontSize: '16px', color: '#505050', marginBottom: '10px', marginLeft: '-60px' }}>fresh from <span style={{ color: '#000000', fontWeight:'bold' }}>naturix farm</span></h4>
+          <h4 style={{ fontSize: '16px', color: '#505050', marginBottom: '10px', marginLeft: '-60px' }}>fresh from <span style={{ color: '#000000', fontWeight:'bold' }}>Mangiram farm</span></h4>
           <p style={{ color: '#7a7a7a', fontSize: '16px', marginBottom: '20px', marginLeft: '-60px', maxWidth:'700px',}}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy.
           </p>
