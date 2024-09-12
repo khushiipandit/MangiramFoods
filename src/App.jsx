@@ -11,6 +11,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Shop from "./pages/Shop";
 import AboutPage from "/src/pages/AboutUs";
+import ProductDescriptions from './components/ProductDescriptions';
+import ProductsShowcase from './components/ProductsShowcase';
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
                     <Route path="/shop" element={<Shop />} />
 
                     <Route path="/contact" element={<ContactPage />} />
+                    <Route path="/" element={<ProductsShowcase />} />
+        <Route path="/product/:productName" element={<ProductDescriptions />} />
                 </Routes>
 <Footer/>
             </div>

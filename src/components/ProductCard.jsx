@@ -1,0 +1,26 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const ProductCard = ({ product }) => {
+  return (
+    <Link to={`/product/${product.name}`} state={{ product }} className="block">
+      <div className="flex items-center bg-white border border-zinc-300 p-4 rounded-lg shadow-sm flex-col mb-2">
+        <div className='w-full flex'>
+          <img src={product.image} alt={product.name} className="w-28 h-28 object-contain mr-4" />
+          <div className="flex-grow">
+            <h3 className="text-lg font-normal text-gray-700 mb-1">{product.name}</h3>
+            <div className="flex items-center">
+              <p className="text-green-600 font-bold text-xl mr-2">${product.price.toFixed(2)}</p>
+              {product.oldPrice && (
+                <p className="text-gray-400 line-through text-sm">${product.oldPrice.toFixed(2)}</p>
+              )}
+            </div>
+            <button className='px-4 rounded-md bg-green-500 mt-2 text-white text-center font-semibold hover:bg-white hover:border hover:border-green-500 hover:text-black transition duration-300 py-1 text-base'>Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </Link>
+  );
+};
+
+export default ProductCard;

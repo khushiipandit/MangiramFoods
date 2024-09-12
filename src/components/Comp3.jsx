@@ -68,7 +68,7 @@ const Comp3 = () => {
         dealTextP: {
             color: '#666',
             marginTop: '50px',
-            marginLeft:'25px',
+            marginLeft:'28px',
             lineHeight: '1.6',
             maxWidth: '500px',
             margin: '0 auto',

@@ -1,48 +1,43 @@
-// import NavBar from '/src/components/NavBar';
 import OrganicFarmFood from '/src/pages/OrganicFarmFood';
 import Comp1 from '../components/Comp1';
 import Comp2 from '../components/Comp2';
 import Comp3 from '../components/Comp3';
 import Comp4 from '../components/Comp4';
 import Hero from "../components/Hero";
-// import Footer from "../components/Footer";
-
-import {Products} from "../components/Products";
+import { Products } from "../components/Products";
 import ProductsShowcase from '../components/ProductsShowcase';
 
 const HomePage = () => {
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-            {/* NavBar Component */}
-            {/* <div style={{ position: 'fixed', top: 0, width: '100%', zIndex: 1000 }}>
-                <NavBar />
-            </div> */}
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', maxWidth: '100%', overflowX: 'hidden' }}>
+            {/* Hero Section */}
             <Hero />
-<Products/>
+            <Products />
 
             {/* Content Section */}
-            <div style={{ marginTop: '0px', flexGrow: 1, paddingTop:'0px' }}>
+            <div style={{ marginTop: '0px', flexGrow: 1, paddingTop: '0px' }}>
                 <OrganicFarmFood />
             </div>
-        
-            <div style={{ marginTop: '140px', flexGrow: 1, padding: '2px',marginLeft:'100px' }}>
+
+            <div style={{ marginTop: '140px', flexGrow: 1, padding: '2px', marginLeft: '100px', maxWidth: '100%' }}>
                 <Comp1 />
             </div>
-            <div style={{ marginTop: '5px', flexGrow: 1, padding: '3px',marginLeft:'3px',marginRight:'5px' }}>
+
+            <div style={{ marginTop: '5px', flexGrow: 1, padding: '3px', marginLeft: '3px', marginRight: '3px', maxWidth: '100%' }}>
                 <Comp2 />
-            </div>   
+            </div>
 
-             <div style={{ marginTop: '5px', flexGrow: 1, padding: '3px',marginLeft:'0px',marginRight:'0px' }}>
+            <div style={{ marginTop: '5px', flexGrow: 1, padding: '3px', marginLeft: '0px', marginRight: '0px', maxWidth: '100%' }}>
                 <Comp3 />
-            </div>   
-            <div style={{ marginTop: '-5px', flexGrow: 1, padding: '3px',marginLeft:'-63px',marginRight:'-63px' ,height:'620px',backgroundColor:'#f9f9f9'}}>
+            </div>
+
+            <div style={{ marginTop: '-5px', flexGrow: 1, padding: '3px', marginLeft: '0px', marginRight: '0px', height: '620px', backgroundColor: '#f9f9f9', maxWidth: '100%' }}>
                 <Comp4 />
-            </div> 
+            </div>
 
-            <ProductsShowcase/>
-
-
-            {/* <Footer/>         */}
+            <div style={{ marginTop: '10px', flexGrow: 1, padding: '3px', marginLeft: '0px', marginRight: '0px', height: '620px', maxWidth: '100%' }}>
+                <ProductsShowcase />
+            </div>
         </div>
     );
 };

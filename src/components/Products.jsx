@@ -70,7 +70,7 @@ import { Link } from 'react-router-dom';
     };
   
     return (
-      <div className="bg-white py-12">
+      <div className="bg-white py-6">
         <div className="container mx-auto">
           <div className="text-center mb-20 flex justify-center items-end">
             <div className="flex space-x-4">
