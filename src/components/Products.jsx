@@ -6,39 +6,21 @@ import { Link } from 'react-router-dom';
 
 
   export const ProductCard = ({ product }) => {
-    const [isHovered, setIsHovered] = useState(false);
-
     return (
-      <div 
-        className="relative px-2 py-8 pt-40 rounded-lg shadow-md mx-2 transition-all duration-300 flex justify-center items-center flex-col "
-        style={{
-          background: 'linear-gradient(to bottom, #f0f0f0, #ffffff)',
-        }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <img src={product.image} alt={product.name} className=" h-32 object-cover transition duration-500 " />
-        <h3 className="text-lg font-semibold  mt-10 ">{product.name}</h3>
-        <p className="text-[#7fba00] font-bold text-sm">${product.price.toFixed(2)}</p>
-        {isHovered && (
-          <div className="absolute top-12 left-0 transition duration-500   right-0 px-4 py-2 bg-gray-100 rounded-xl flex shadow-xl items-center justify-center space-x-6 mx-auto" style={{ width: 'fit-content' }}>
-            <button className="bg-white text-black p-2 rounded-full hover:bg-[#7fba00] hover:text-white transition duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-            </button>
-            <button className="bg-white text-black p-2 rounded-full hover:bg-[#7fba00] hover:text-white transition duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
-            </button>
-            <button className="bg-white text-black p-2 rounded-full hover:bg-[#7fba00] hover:text-white transition duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </button>
+      <div className="relative bg-white rounded-2xl shadow-md overflow-hidden flex flex-col px-2 pt-16 pb-0 border border-zinc-300 hover:border-zinc-400 hover:shadow-lg transition">
+        <img src={product.image} alt={product.name} className="w-full h-28 object-contain" />
+        <div className="py-2  flex-grow flex flex-col justify-between">
+          <h3 className="text-lg text-center font-semibold mb-2">{product.name}</h3>
+          <div className="flex  justify-center gap-2 items-center">
+            <p className="text-[#7fba00] font-bold">${product.price.toFixed(2)}</p>
+            <p className="text-gray-500 line-through">${(product.price * 1.2).toFixed(2)}</p>
           </div>
-        )}
+          <div className='gap-1 flex flex-col  mt-4'>
+<button className='bg-[#7fba00] text-center text-base w-full py-2 rounded-lg border-2 text-white hover:border-[#7fba00] hover:bg-white shadow-sm hover:shadow-md transition hover:text-black'>Buy Now</button>
+<button className='border-[#7fba00] text-center w-full text-base  py-2 rounded-lg border-2 text-black hover:bg-[#7fba00]  shadow-sm hover:text-white hover:shadow-md transition'>Add to Cart</button>
+
+          </div>
+        </div>
       </div>
     );
   };
@@ -56,6 +38,9 @@ import { Link } from 'react-router-dom';
       { id: 6, name: 'Organic Pineapple', price: 50.00, image: '/src/images/products-head-fruit.png', category: 'organic fruits' },
 
       { id: 7, name: 'Organic Pineapple', price: 50.00, image: '/src/images/products-head-fruit.png', category: 'organic fruits' },
+       { id: 8, name: 'Organic Pineapple', price: 50.00, image: '/src/images/products-head-fruit.png', category: 'organic fruits' },
+        { id: 9, name: 'Organic Pineapple', price: 50.00, image: '/src/images/products-head-fruit.png', category: 'organic fruits' },
+        
 
     ];
 
@@ -109,11 +94,13 @@ import { Link } from 'react-router-dom';
             </div>
           </div>
           
-            {filteredProducts.map((product) => (
-              <div key={product.id} className="p-2">
-                <ProductCard product={product} />
-              </div>
-            ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 w-[85%] m-auto">
+              {products.map((product) => (
+                <div key={product.id} className="p-2">
+                  <ProductCard product={product} />
+                </div>
+              ))}
+            </div>
          <div className='w-full flex justify-center items-center mt-4'>
 <button className="px-8 py-2 text-lg font-medium text-black border border-green-500 rounded-full block m-auto hover:bg-green-500 hover:text-white transition">
   <Link to="/shop" >View More</Link>

@@ -194,7 +194,10 @@ const Comp4 = () => {
       <div style={{ marginTop: '90px', color: '#f9f9ff9' }}>
         <img src="/src/images/spinach.png" alt="Organic Vegetables" style={{ width: '300px', maxWidth: '100%', marginLeft: '-10px' }} />
       </div>
-      
+      <div style={styles.footer}>
+        <img src="/src/images/icon-1.png" alt="Grapefruit" style={styles.footer_image} />
+        <div>⭐⭐⭐ a taste of <strong>real food</strong> ⭐⭐⭐</div>
+      </div>
     </div>
   );
 };

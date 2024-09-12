@@ -29,9 +29,8 @@ const HomePage = () => {
 
             <div style={{ marginTop: '5px', flexGrow: 1, padding: '3px', marginLeft: '0px', marginRight: '0px', maxWidth: '100%' }}>
                 <Comp3 />
-            </div>
-
-            <div style={{ marginTop: '-5px', flexGrow: 1, padding: '3px', marginLeft: '0px', marginRight: '0px', height: '620px', backgroundColor: '#f9f9f9', maxWidth: '100%' }}>
+            </div>   
+            <div style={{ marginTop: '-5px', flexGrow: 1, padding: '3px' ,height:'620px',backgroundColor:'#f9f9f9'}}>
                 <Comp4 />
             </div>
 

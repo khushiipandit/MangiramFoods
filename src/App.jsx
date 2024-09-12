@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Shop from "./pages/Shop";
-import AboutPage from "/src/pages/AboutUs";
+// import AboutPage from "/src/pages/AboutUs";
 import ProductDescriptions from './components/ProductDescriptions';
 import ProductsShowcase from './components/ProductsShowcase';
 
