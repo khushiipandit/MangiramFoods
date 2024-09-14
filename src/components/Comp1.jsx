@@ -4,9 +4,9 @@ const Comp1 = () => {
   const [hoverIndex, setHoverIndex] = useState(null);
 
   const products = [
-    { image: '/src/images/straw.png', title: 'organic fruits', items: '52 items' },
-    { image: '/src/images/tamatar.png', title: 'fresh vegetables', items: '35 items' },
-    { image: '/src/images/bun.png', title: 'organic breads', items: '23 items' },
+    { image: '/images/straw.png', title: 'organic fruits', items: '52 items' },
+    { image: '/images/tamatar.png', title: 'fresh vegetables', items: '35 items' },
+    { image: '/images/bun.png', title: 'organic breads', items: '23 items' },
   ];
 
   return (

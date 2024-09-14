@@ -47,10 +47,10 @@ const Comp4 = () => {
   const cardsRef = useRef(null);
 
   const products = [
-    { name: 'Cherry', imageSrc: '/src/images/deal-1.png', oldPrice: '65.00', newPrice: '50.00' },
-    { name: 'Pineapple', imageSrc: '/src/images/deal-2.png', oldPrice: '65.00', newPrice: '50.00' },
-    { name: 'Apple', imageSrc: '/src/images/deal-1.png', oldPrice: '75.00', newPrice: '60.00' },
-    { name: 'Banana', imageSrc: '/src/images/deal-2.png', oldPrice: '80.00', newPrice: '70.00' },
+    { name: 'Cherry', imageSrc: '/images/deal-1.png', oldPrice: '65.00', newPrice: '50.00' },
+    { name: 'Pineapple', imageSrc: '/images/deal-2.png', oldPrice: '65.00', newPrice: '50.00' },
+    { name: 'Apple', imageSrc: '/images/deal-1.png', oldPrice: '75.00', newPrice: '60.00' },
+    { name: 'Banana', imageSrc: '/images/deal-2.png', oldPrice: '80.00', newPrice: '70.00' },
   ];
 
   const allProducts = [...products, ...products, ...products];
@@ -133,7 +133,7 @@ const Comp4 = () => {
       </div>
 
       <div className="mt-8 text-center">
-        <img src="/src/images/spinach.png" alt="Organic Vegetables" className="w-48 max-w-full mx-auto" />
+        <img src="/images/spinach.png" alt="Organic Vegetables" className="w-48 max-w-full mx-auto" />
       </div>
      
     </div>

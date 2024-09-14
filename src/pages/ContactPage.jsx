@@ -34,14 +34,14 @@ const ContactPage = () => {
       </div>
       <div className="hidden md:block absolute top-0 right-0">
         <img 
-          src="/src/images/right_mint_leave.png" 
+          src="/images/right_mint_leave.png" 
           alt="Leaf Decoration" 
           className="w-24 md:w-40 h-auto"
         />
       </div>
       <div className="hidden md:block absolute bottom-0 right-12 md:right-48">
         <img 
-          src="/src/images/tamatar.png" 
+          src="/images/tamatar.png" 
           alt="Leaf Decoration" 
           className="w-24 md:w-40 h-auto"
         />

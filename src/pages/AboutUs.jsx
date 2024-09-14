@@ -39,7 +39,7 @@ const AboutPage = () => {
       position: 'absolute',
       top: '0',
       right: '0',
-      backgroundImage: 'url("/src/images/badam.png")',
+      backgroundImage: 'url("/images/badam.png")',
       backgroundPosition: 'right top',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'contain',
@@ -197,10 +197,10 @@ const AboutPage = () => {
       </section>
       
       <section style={styles.aboutContent}>
-        <img src="/src/images/wave.png" alt="Grapefruit" style={styles.image2} />
+        <img src="/images/wave.png" alt="Grapefruit" style={styles.image2} />
 
         <div style={styles.imageContainer}>
-          <img src="/src/images/icon-1.png" alt="Grapefruit" style={styles.image} />
+          <img src="/images/icon-1.png" alt="Grapefruit" style={styles.image} />
         </div>
         <div style={styles.contentText}>
           <p>⭐⭐⭐ a taste of <span style={styles.highlight}>real food</span>⭐⭐⭐ </p>
@@ -223,7 +223,7 @@ const AboutPage = () => {
         <div className="flex flex-wrap justify-center md:justify-between mt-12">
           {[1, 2, 3, 4].map((index) => (
             <div key={index} className="w-full sm:w-1/2 md:w-1/4 mb-8 px-4">
-              <div className="bg-center bg-no-repeat bg-contain w-24 h-24 mx-auto mb-4" style={{backgroundImage: `url('/src/images/feature-${index}.png')`}}></div>
+              <div className="bg-center bg-no-repeat bg-contain w-24 h-24 mx-auto mb-4" style={{backgroundImage: `url('/images/feature-${index}.png')`}}></div>
               <h4 className="text-lg font-semibold mb-2">Feature Title {index}</h4>
               <p className="text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy.</p>
               <a href="#" className="inline-block px-4 py-2 border-2 border-gray-200 rounded-full text-gray-500 hover:bg-gray-100 transition-colors">READ MORE</a>
@@ -232,7 +232,7 @@ const AboutPage = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <img src="/src/images/feature.png" alt="Organic Grapefruit" className="max-w-full h-auto mx-auto" />
+          <img src="/images/feature.png" alt="Organic Grapefruit" className="max-w-full h-auto mx-auto" />
         </div>
       </div>
 

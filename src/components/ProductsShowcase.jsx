@@ -7,55 +7,55 @@ const ProductsShowcase = () => {
       name: 'organic blackberry',
       price: 50.00,
       oldPrice: 55.00,
-      image: '/src/images/cherry.png',
+      image: '/images/cherry.png',
     },
     {
       name: 'organic strawberry',
       price: 50.00,
-      image: '/src/images/tamatar.png',
+      image: '/images/tamatar.png',
     },
     {
       name: 'organic grapes',
       price: 50.00,
-      image: '/src/images/spinach.png',
+      image: '/images/spinach.png',
     },
     {
       name: 'organic peach',
       price: 50.00,
-      image: '/src/images/pineapple.png',
+      image: '/images/pineapple.png',
     },
     {
       name: 'organic mushroom',
       price: 50.00,
-      image: '/src/images/tea.png',
+      image: '/images/tea.png',
     },
     {
       name: 'organic blackberry',
       price: 50.00,
       oldPrice: 60.00,
-      image: '/src/images/cup.png',
+      image: '/images/cup.png',
     },
     {
       name: 'organic redberry',
       price: 50.00,
-      image: '/src/images/juce.png',
+      image: '/images/juce.png',
     },
     {
       name: 'organic apple',
       price: 50.00,
-      image: '/src/images/tomato.png',
+      image: '/images/tomato.png',
     },
     {
       name: 'organic beans',
       price: 50.00,
-      image: '/src/images/cherry.png',
+      image: '/images/cherry.png',
     },
   ];
 
   return (
     <div className="bg-white px-4 sm:px-8 md:px-16 lg:px-24 py-12 mb-10">
       <div className="flex flex-col items-center mb-8">
-        <img src="/src/images/feature.png" alt="Grapefruit" className="h-16 sm:h-20 mb-2" />
+        <img src="/images/feature.png" alt="Grapefruit" className="h-16 sm:h-20 mb-2" />
         <div className="text-sm text-green-600 text-center">
           <span className="text-green-500">★</span> a taste of <strong>real food</strong> <span className="text-green-500">★</span>
         </div>

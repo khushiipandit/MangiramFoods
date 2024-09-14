@@ -41,7 +41,7 @@ const Comp3 = () => {
                         </p>
                     </div>
                     <div className="md:w-1/2 flex justify-center">
-                        <img src="/src/images/deal.png" alt="Organic Tomatoes" className="w-40 sm:w-48 lg:w-56" />
+                        <img src="/images/deal.png" alt="Organic Tomatoes" className="w-40 sm:w-48 lg:w-56" />
                     </div>
                 </div>
 

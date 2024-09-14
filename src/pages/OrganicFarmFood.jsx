@@ -10,11 +10,11 @@ const OrganicFarmFood = () => {
 
   return (
     <div className="bg-[#f9f9f5] py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <img src="/src/images/left_mint_leave.png" alt="Left Leaf" className="absolute left-0 top-36 w-24 lg:w-36" />
-      <img src="/src/images/right_mint_leave.png" alt="Right Leaf" className="absolute right-0 top-96 w-24 lg:w-36" />
+      <img src="/images/left_mint_leave.png" alt="Left Leaf" className="absolute left-0 top-36 w-24 lg:w-36" />
+      <img src="/images/right_mint_leave.png" alt="Right Leaf" className="absolute right-0 top-96 w-24 lg:w-36" />
       
       <div className="max-w-7xl mx-auto text-center">
-        <img src="/src/images/chotipatti.png" alt="Chotipatti" className="h-3 mx-auto mb-6" />
+        <img src="/images/chotipatti.png" alt="Chotipatti" className="h-3 mx-auto mb-6" />
         
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#505050] mb-2">
           we are <span className="font-bold text-[#515153]">organic farmfood</span>
@@ -31,7 +31,7 @@ const OrganicFarmFood = () => {
             <div className="grid grid-cols-4 gap-8">
               {features.map((feature, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-cover bg-center" style={{backgroundImage: `url('/src/images/${feature.icon}')`}}></div>
+                  <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-cover bg-center" style={{backgroundImage: `url('/images/${feature.icon}')`}}></div>
                   <h4 className="text-lg text-[#505050] mb-2">{feature.title} <span className="font-bold text-black">{feature.boldTitle}</span></h4>
                   <p className="text-sm text-[#7a7a7a]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy.</p>
                 </div>
@@ -43,7 +43,7 @@ const OrganicFarmFood = () => {
           <div className="lg:hidden grid grid-cols-2 gap-8">
             {features.map((feature, index) => (
               <div key={index} className="text-center">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-cover bg-center" style={{backgroundImage: `url('/src/images/${feature.icon}')`}}></div>
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-cover bg-center" style={{backgroundImage: `url('/images/${feature.icon}')`}}></div>
                 <h4 className="text-lg text-[#505050] mb-2">{feature.title} <span className="font-bold text-black">{feature.boldTitle}</span></h4>
                 <p className="text-sm text-[#7a7a7a]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy.</p>
               </div>
@@ -52,7 +52,7 @@ const OrganicFarmFood = () => {
         </div>
 
       </div>
-      <img src="/src/images/feature.png" alt="Organic Grapefruit" className="mx-auto mt-16 -mb-72 z-[100]" />
+      <img src="/images/feature.png" alt="Organic Grapefruit" className="mx-auto mt-16 -mb-72 z-[100]" />
     </div>
   );
 };

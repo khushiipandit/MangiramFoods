@@ -112,7 +112,7 @@ const Comp5 = () => {
     <div style={styles.container}>
       <section style={styles.section}>
         <div style={styles.topLeaves}>
-          <img src="/src/images/left_mint_leave.png" alt="Leaves" style={styles.leavesImage} />
+          <img src="/images/left_mint_leave.png" alt="Leaves" style={styles.leavesImage} />
         </div>
 
         <div style={{ marginBottom: '30px' }}>
@@ -145,12 +145,12 @@ const Comp5 = () => {
           </div>
           
           <div>
-            <img src="/src/images/katori.png" alt="Signature" style={styles.signatureImage} />
+            <img src="/images/katori.png" alt="Signature" style={styles.signatureImage} />
           </div>
         </div>
 
         <div style={{ position: 'relative', marginTop: '-80px' }}>
-          <img src="/src/images/spinach.png" alt="Organic Vegetables" style={styles.vegetablesImage} />
+          <img src="/images/spinach.png" alt="Organic Vegetables" style={styles.vegetablesImage} />
         </div>
 
         <p style={styles.slogan}>Live Organic, Live Healthy</p>

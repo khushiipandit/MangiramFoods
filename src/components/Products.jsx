@@ -53,15 +53,15 @@ export const ProductCard = ({ product }) => {
     const [activeCategory, setActiveCategory] = useState('all');
 
     const products = [
-      { id: 1, name: 'Organic Tomato', price: 50.00, image: '/src/images/products-head-fruit.png', category: 'organic vegetables' },
-      { id: 2, name: 'Organic Cabbage', price: 50.00, image: '/src/images/products-head-fruit.png', category: 'organic vegetables' },
-      { id: 3, name: 'Organic Cherry', price: 50.00, image: '/src/images/products-head-fruit.png', category: 'organic fruits' },
-      { id: 4, name: 'Organic Salad', price: 50.00, image: '/src/images/products-head-fruit.png', category: 'organic vegetables' },
-      { id: 5, name: 'Organic Pineapple', price: 50.00, image: '/src/images/products-head-fruit.png', category: 'organic fruits' },
-      { id: 6, name: 'Organic Pineapple', price: 50.00, image: '/src/images/products-head-fruit.png', category: 'organic fruits' },
+      { id: 1, name: 'Organic Tomato', price: 50.00, image: '/images/products-head-fruit.png', category: 'organic vegetables' },
+      { id: 2, name: 'Organic Cabbage', price: 50.00, image: '/images/products-head-fruit.png', category: 'organic vegetables' },
+      { id: 3, name: 'Organic Cherry', price: 50.00, image: '/images/products-head-fruit.png', category: 'organic fruits' },
+      { id: 4, name: 'Organic Salad', price: 50.00, image: '/images/products-head-fruit.png', category: 'organic vegetables' },
+      { id: 5, name: 'Organic Pineapple', price: 50.00, image: '/images/products-head-fruit.png', category: 'organic fruits' },
+      { id: 6, name: 'Organic Pineapple', price: 50.00, image: '/images/products-head-fruit.png', category: 'organic fruits' },
 
-      { id: 7, name: 'Organic Pineapple', price: 50.00, image: '/src/images/products-head-fruit.png', category: 'organic fruits' },
-       { id: 8, name: 'Organic Pineapple', price: 50.00, image: '/src/images/products-head-fruit.png', category: 'organic fruits' },
+      { id: 7, name: 'Organic Pineapple', price: 50.00, image: '/images/products-head-fruit.png', category: 'organic fruits' },
+       { id: 8, name: 'Organic Pineapple', price: 50.00, image: '/images/products-head-fruit.png', category: 'organic fruits' },
       
         
 
@@ -81,8 +81,8 @@ export const ProductCard = ({ product }) => {
           {/* Small and Medium devices layout */}
           <div className="md:hidden text-center mb-10">
             <div className="flex flex-col items-center mb-6">
-              <img src="/src/images/products-head-fruit.png" alt="Fruits" className="w-auto h-16 object-cover rounded-lg mb-4" />
-              <img src="/src/images/product-organic.png" alt="Organic" className="w-auto h-20 object-cover rounded-lg mb-6" />
+              <img src="/images/products-head-fruit.png" alt="Fruits" className="w-auto h-16 object-cover rounded-lg mb-4" />
+              <img src="/images/product-organic.png" alt="Organic" className="w-auto h-20 object-cover rounded-lg mb-6" />
               
               <div className="flex flex-wrap justify-center items-center gap-4 mt-4">
                 <button
@@ -129,8 +129,8 @@ export const ProductCard = ({ product }) => {
                 ))}
               </div>
               <div className="flex flex-col items-center mx-16 -mb-6">
-                <img src="/src/images/products-head-fruit.png" alt="Fruits" className="w-auto h-20 object-cover rounded-lg mb-2" />
-                <img src="/src/images/product-organic.png" alt="Fruits" className="w-auto h-24 object-cover rounded-lg -mt-4" />
+                <img src="/images/products-head-fruit.png" alt="Fruits" className="w-auto h-20 object-cover rounded-lg mb-2" />
+                <img src="/images/product-organic.png" alt="Fruits" className="w-auto h-24 object-cover rounded-lg -mt-4" />
               </div>
               <div className="flex space-x-4">
                 {categories.slice(2).map((category) => (

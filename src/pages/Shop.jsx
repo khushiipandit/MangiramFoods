@@ -23,25 +23,25 @@ const Shop = () => {
       name: 'organic mushroom',
       price: 50.00,
       originalPrice: 65.00,
-      image: '/src/images/mashroom.png',
+      image: '/images/mashroom.png',
     },
     {
       name: 'organic onion',
       price: 50.00,
       originalPrice: 65.00,
-      image: '/src/images/onion.png',
+      image: '/images/onion.png',
     },
     {
       name: 'organic cherry',
       price: 50.00,
       originalPrice: 65.00,
-      image: '/src/images/cherryy.png',
+      image: '/images/cherryy.png',
     },
     {
       name: 'organic pineapple',
       price: 50.00,
       originalPrice: 65.00,
-      image: '/src/images/pinapple.png',
+      image: '/images/pinapple.png',
     },
   ];
 
@@ -56,10 +56,10 @@ const Shop = () => {
             <span>HOME / ABOUT</span>
           </div>
         </div>
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-no-repeat bg-contain bg-right-top hidden md:block" style={{backgroundImage: 'url("/src/images/badam.png")'}}></div>
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-no-repeat bg-contain bg-right-top hidden md:block" style={{backgroundImage: 'url("/images/badam.png")'}}></div>
       </section>
 
-      <img src="/src/images/wave.png" alt="Decorative wave" className="w-full mt-[-90px] relative z-10" />
+      <img src="/images/wave.png" alt="Decorative wave" className="w-full mt-[-90px] relative z-10" />
 
       <div className="text-center p-4 md:p-8 font-sans">
         <div className="flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto mt-8 space-y-4 md:space-y-0">
@@ -78,7 +78,7 @@ const Shop = () => {
           </div>
 
           <img
-            src="/src/images/logo-2.png"
+            src="/images/logo-2.png"
             alt="Organic Fresh Food"
             className="rounded-full p-2 w-32 h-32"
           />

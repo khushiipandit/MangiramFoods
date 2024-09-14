@@ -9,12 +9,12 @@ const Hero = () => {
     <div className="relative min-h-screen flex items-center justify-center flex-col p-4">
       <div 
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/src/images/hero.jpg')" }}
+        style={{ backgroundImage: "url('/images/hero.jpg')" }}
       ></div>
       <div  className="absolute inset-0 bg-zinc-200 opacity-20"></div>
       <div className="relative text-center text-[#525252] px-4 flex justify-center items-center flex-col max-w-4xl mx-auto">
         <div className='mb-4 sm:mb-8'>
-          <img src='/src/images/organic.png' className=" h-28 sm:h-32  md:h-36  mx-auto" alt="Organic" />
+          <img src='/images/organic.png' className=" h-28 sm:h-32  md:h-36  mx-auto" alt="Organic" />
           <p className='text-end text-xs sm:text-sm -mt-4 sm:-mt-6 italic text-zinc-600 font-normal'>100% Guarantee</p>
         </div>
         <h1 className="text-5xl  lg:text-7xl font-extralight tracking-tight mb-2 sm:mb-4">
