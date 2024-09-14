@@ -132,9 +132,7 @@ const Comp4 = () => {
         </div>
       </div>
 
-      <div className="mt-8 text-center">
-        <img src="/images/spinach.png" alt="Organic Vegetables" className="w-48 max-w-full mx-auto" />
-      </div>
+    
      
     </div>
   );

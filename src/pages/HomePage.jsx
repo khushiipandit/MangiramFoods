@@ -1,4 +1,4 @@
-import OrganicFarmFood from '/src/pages/OrganicFarmFood';
+import Organic  from './OrganicFarmFood';
 import Comp1 from '../components/Comp1';
 import Comp2 from '../components/Comp2';
 import Comp3 from '../components/Comp3';
@@ -16,7 +16,7 @@ const HomePage = () => {
 
             {/* Content Section */}
             <div style={{ marginTop: '0px', flexGrow: 1, paddingTop: '0px' }}>
-                <OrganicFarmFood />
+                <Organic  />
             </div>
 
             <div style={{ flexGrow: 1, padding: '2px', maxWidth: '100%' }}>

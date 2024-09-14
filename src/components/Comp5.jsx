@@ -117,7 +117,7 @@ const Comp5 = () => {
 
         <div style={{ marginBottom: '30px' }}>
           <h1 style={styles.title}>
-            naturix <span style={{ color: '#333', fontWeight: 'normal' }}>organic farmfood since 1990</span> 
+            naturix <span style={{ color: '#333', fontWeight: 'normal' }}>organic   since 1990</span> 
           </h1>
           <div style={{ marginTop: '-20px', gap: '0px' }}>
             <div style={styles.subtitle}>100% ORGANIC GUARANTEE</div>

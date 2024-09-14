@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import ProductCard from '../components/Card';
 import { useNavigate } from 'react-router-dom';
-import Comp1 from '../components/Comp1';
-import OrganicFarmFood from './OrganicFarmFood';
-import Comp5 from '../components/Comp5';
-import Comp3 from '../components/Comp3';
-import Comp2 from '../components/Comp2';
+
 
 const Shop = () => {
   const [price, setPrice] = useState(500);
@@ -51,7 +47,7 @@ const Shop = () => {
       <section className="relative overflow-hidden bg-[#f0f4ed] py-10 px-4 md:py-16 md:px-10 mt-16">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-3xl md:text-4xl text-gray-800 mb-2">
-            Shop <span className="font-bold text-black">Mangeram</span> farmfood
+            Shop <span className="font-bold text-black">The Maangerams</span>  
           </h1>
           <div className="text-sm text-gray-600 max-sm:mt-7">
             <span>HOME / SHOP</span>

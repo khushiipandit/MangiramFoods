@@ -1,8 +1,8 @@
 import React from 'react';
 
-const OrganicFarmFood = () => {
+const Organic  = () => {
   const features = [
-    { icon: 'feature-1.png', title: 'fresh from', boldTitle: 'Mangeram farm' },
+    { icon: 'feature-1.png', title: 'fresh from', boldTitle: 'The Maangerams farm' },
     { icon: 'feature-2.png', title: '100%', boldTitle: 'organic goods' },
     { icon: 'feature-3.png', title: 'premium', boldTitle: 'quality' },
     { icon: 'feature-4.png', title: '100%', boldTitle: 'natural' },
@@ -17,9 +17,9 @@ const OrganicFarmFood = () => {
         <img src="/images/chotipatti.png" alt="Chotipatti" className="h-3 mx-auto mb-6" />
         
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#505050] mb-2">
-          we are <span className="font-bold text-[#515153]">organic farmfood</span>
+          we are <span className="font-bold text-[#515153]">organic  </span>
         </h1>
-        <h3 className="text-sm sm:text-base text-[#515153] mb-6">----ABOUT Mangeram FARMFOOD----</h3>
+        <h3 className="text-sm sm:text-base text-[#515153] mb-6">----ABOUT The Maangerams  ----</h3>
         <p className="text-base sm:text-lg text-[#7a7a7a] max-w-3xl mx-auto mb-12 lg:mb-24">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
           Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
@@ -57,4 +57,4 @@ const OrganicFarmFood = () => {
   );
 };
 
-export default OrganicFarmFood;
+export default Organic ;

@@ -23,7 +23,7 @@ const ContactPage = () => {
       <div className="bg-gray-100 py-12 md:py-16 mt-16">
         <div className="container mx-auto px-4">
           <div className="flex flex-col justify-start items-start">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Mangeram Shop</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">The Maangerams Shop</h1>
             <div className="text-sm flex text-gray-600 mb-8">
               <span>HOME</span>
               <span className="mx-2">/</span>
@@ -63,11 +63,11 @@ const ContactPage = () => {
 
           {/* Address details */}
           <div className="w-full md:w-1/3">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Mangeram Address</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">The Maangerams Address</h2>
             <p className="text-sm text-gray-600 mb-6">ORGANIC STORE</p>
 
             <div className="space-y-4 text-gray-700">
-              <p className="font-semibold text-green-600">Mangeram STORE</p>
+              <p className="font-semibold text-green-600">The Maangerams STORE</p>
               <p>142 West newton, NY 19088, United States</p>
 
               <div>
@@ -83,7 +83,7 @@ const ContactPage = () => {
       </div>
       <div className="bg-white border-t-2 border-zinc-300 border-dotted py-8 md:py-16">
         <div className="container mx-auto px-4 max-w-2xl">
-          <h2 className="text-xl md:text-2xl font-thin text-center mb-2">Contact <span className="text-[#7FBA00] font-bold">Mangeram</span></h2>
+          <h2 className="text-xl md:text-2xl font-thin text-center mb-2">Contact <span className="text-[#7FBA00] font-bold">The Maangerams</span></h2>
           <p className="text-center text-gray-500 mb-8 text-xs">ORGANIC STORE</p>
           
           <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">

@@ -5,19 +5,19 @@ const Footer = () => {
     <footer className="bg-slate-100 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-10 border-t mt-4 border-gray-200">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <div className="space-y-4">
-          <h3 className="text-xl sm:text-2xl font-semibold text-green-600">Mangeram <span className="font-normal text-gray-700">farmfood</span></h3>
+          <h3 className="text-xl sm:text-2xl font-semibold text-green-600">The Maangerams <span className="font-normal text-gray-700"> </span></h3>
           <p className="uppercase text-xs sm:text-sm text-gray-500">ORGANIC STORE</p>
           <div className="w-12 h-0.5 bg-green-600"></div>
           <p className="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
           <div className="space-y-2 text-sm text-gray-600">
-            <p className="flex items-center"><span className="material-icons mr-2 text-green-600 text-base sm:text-lg">location_on</span>100 highland ave, california, united state</p>
-            <p className="flex items-center"><span className="material-icons mr-2 text-green-600 text-base sm:text-lg">email</span>contact@Mangeram.com</p>
-            <p className="flex items-center"><span className="material-icons mr-2 text-green-600 text-base sm:text-lg">language</span>www.Mangeram.com</p>
+            <p className="flex items-center"><span className="material-icons mr-2 text-green-600 text-base sm:text-lg  fa-solid fa-location-dot"></span>100 highland ave, california, united state</p>
+            <p className="flex items-center"><span className="material-icons mr-2 text-green-600 text-base sm:text-lg fa-solid fa-envelope"></span>contact@The Maangerams.com</p>
+            <p className="flex items-center"><span className="material-icons mr-2 text-green-600 text-base sm:text-lg fa-solid fa-globe"></span>www.The Maangerams.com</p>
           </div>
         </div>
 
         <div className="mt-8 sm:mt-0">
-          <h3 className="text-lg font-semibold text-gray-700 mb-4">Mangeram Information</h3>
+          <h3 className="text-lg font-semibold text-gray-700 mb-4">The Maangerams Information</h3>
           <div className="w-12 h-0.5 bg-green-600 mb-4"></div>
           <ul className="space-y-2 text-sm text-gray-600">
             {[
@@ -57,7 +57,7 @@ const Footer = () => {
       </div>
 
       <div className="max-w-7xl mx-auto mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm text-gray-700">
-        <p className="text-center sm:text-left mb-4 sm:mb-0">©2024 Mangeram.com , made with <span className="text-red-500">❤️</span> by Campaigning Source, all right reserved</p>
+        <p className="text-center sm:text-left mb-4 sm:mb-0">©2024 The Maangerams.com , made with <span className="text-red-500">❤️</span> by Campaigning Source, all right reserved</p>
         <div className="flex space-x-4">
           <a href="#" className="hover:text-green-600 transition-colors duration-200">Privacy Policy</a>
           <a href="#" className="hover:text-green-600 transition-colors duration-200">Terms of Service</a>

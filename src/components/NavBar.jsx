@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logoImage from '/images/bg.jpg';
+import logoImage from '/images/logo.png';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -43,13 +43,13 @@ const Navbar = () => {
       transition-all duration-300 ease-in-out
     `}>
       <div className="container mx-auto px-6 sm:px-8 md:px-10 py-3 md:py-4 flex justify-between items-center">
-        <Link to="/" className="flex items-start text-left justify-start  flex-col">
-          <img src={logoImage} alt="Logo" className="h-8 md:h-10" />
+        <Link to="/" className="flex items-center text-center justify-start  gap-0">
+          <img src={logoImage} alt="Logo" className={` ${isHomePage ? (scrolled ? 'md:h-12 h-10' :'h-16 md:h-20 '): 'h-10 md:h-12 '}  `} />
           <span className={`
-             text-xs md:text-sm font-medium  text-black mt-2 text-left
-            ${scrolled || !isHomePage ? 'hidden' : 'block'}
+              font-medium  text-black mt-0 text-left tracking-tight
+            ${scrolled || !isHomePage ? 'text-sm md:text-base' : 'text-base md:text-xl'}
           `}>
-            ORGANIC STORE
+            The Maangerams
           </span>
         </Link>
 
