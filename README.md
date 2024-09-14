@@ -3,7 +3,7 @@
 
 
 
-## Frontend Handled and Completed by
+### Frontend Handled and Completed by:
 
 The frontend of Mangeram Foods was completed by:
 
@@ -11,7 +11,7 @@ The frontend of Mangeram Foods was completed by:
 - Khusi Pandit
 
 
-#### Mangeram Foods Frontend Done
+#### Mangeram Foods Frontend Done except actual product data integration
 
 
 
