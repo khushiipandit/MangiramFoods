@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ProductCard from '../components/Card';
 import { useNavigate } from 'react-router-dom';
 import Comp1 from '../components/Comp1';
 import OrganicFarmFood from './OrganicFarmFood';
@@ -50,10 +51,10 @@ const Shop = () => {
       <section className="relative overflow-hidden bg-[#f0f4ed] py-10 px-4 md:py-16 md:px-10 mt-16">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-3xl md:text-4xl text-gray-800 mb-2">
-            about <span className="font-bold text-black">naturix</span> farmfood
+            Shop <span className="font-bold text-black">Mangeram</span> farmfood
           </h1>
-          <div className="text-sm text-gray-600">
-            <span>HOME / ABOUT</span>
+          <div className="text-sm text-gray-600 max-sm:mt-7">
+            <span>HOME / SHOP</span>
           </div>
         </div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-no-repeat bg-contain bg-right-top hidden md:block" style={{backgroundImage: 'url("/images/badam.png")'}}></div>
@@ -109,37 +110,7 @@ const Shop = () => {
       <div className="flex flex-wrap justify-center gap-8 p-4 md:p-8">
         {products.map((product, index) => (
           <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 max-w-xs">
-            <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-xl border border-slate-200 hover:border-slate-300">
-              <div className="relative overflow-hidden group">
-                <img 
-                  src={product.image} 
-                  alt={product.name} 
-                  className="w-full h-32 my-6 object-contain transition duration-300 ease-in-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
-                  <button 
-                    className="bg-white text-gray-800 font-semibold py-2 px-4 rounded-full hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105"
-                    onClick={() => handleViewDetails(product)}
-                  >
-                    View Details
-                  </button>
-                </div>
-              </div>
-              <div className="p-4 flex-grow flex flex-col justify-between">
-                <div>
-                  <h3 className="text-lg font-semibold mb-2 text-center">{product.name}</h3>
-                  <div className="flex justify-center items-center space-x-2 mb-3">
-                    <p className="text-[#7fba00] font-bold text-xl">${product.price.toFixed(2)}</p>
-                    <p className="text-gray-500 line-through text-sm">${product.originalPrice.toFixed(2)}</p>
-                  </div>
-                </div>
-                <div className="flex flex-col space-y-2">
-                  <button className="bg-[#7fba00] text-white font-semibold py-2 px-4 rounded-full hover:bg-[#6ca300] transition duration-300 ease-in-out transform hover:scale-105">
-                    Buy Now
-                  </button>
-                </div>
-              </div>
-            </div>
+            <ProductCard product={product} />
           </div>
         ))}
       </div>

@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate(`/product/${product.name}`);
+  const handleViewDetails = () => {
+    navigate(`/product/${product.name}`, { state: { product } });
   };
 
   const handleBuyNow = (e) => {
@@ -14,13 +14,13 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="w-64 h-96 p-4 bg-white m-2 rounded-lg shadow-md flex flex-col justify-between cursor-pointer transition-transform duration-300 hover:scale-105" onClick={handleClick}>
+    <div className="w-64 h-96 p-4 bg-white m-2 rounded-lg shadow-md flex flex-col justify-between cursor-pointer transition-transform duration-300 hover:scale-105" onClick={handleViewDetails}>
       <div>
         <div className="flex gap-2 mb-2">
           <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs">NEW</span>
           <span className="bg-cyan-500 text-white px-3 py-1 rounded-full text-xs">SALE</span>
         </div>
-        <img src={product.imageSrc} alt={product.name} className="w-full h-40 object-contain mb-4" />
+        <img src={product.image} alt={product.name} className="w-full h-40 object-contain mb-4" />
         <div className="text-center">
           <div className="text-xs text-gray-600 uppercase tracking-wide mb-1">ORGANIC FRUITS</div>
           <div className="text-lg font-bold text-gray-800 mb-2 capitalize">fresh {product.name}</div>
@@ -28,8 +28,8 @@ const ProductCard = ({ product }) => {
       </div>
       <div>
         <div className="flex justify-center items-center gap-2 mb-3">
-          <span className="text-lg font-bold text-green-500">${product.newPrice}</span>
-          <span className="text-sm line-through text-gray-400">${product.oldPrice}</span>
+          <span className="text-lg font-bold text-green-500">${product.price.toFixed(2)}</span>
+          <span className="text-sm line-through text-gray-400">${product.oldPrice.toFixed(2)}</span>
         </div>
         <button 
           className="w-full bg-green-500 text-white py-2 px-4 rounded-md text-sm font-semibold transition-colors duration-300 hover:bg-green-600"
@@ -47,10 +47,10 @@ const Comp4 = () => {
   const cardsRef = useRef(null);
 
   const products = [
-    { name: 'Cherry', imageSrc: '/images/deal-1.png', oldPrice: '65.00', newPrice: '50.00' },
-    { name: 'Pineapple', imageSrc: '/images/deal-2.png', oldPrice: '65.00', newPrice: '50.00' },
-    { name: 'Apple', imageSrc: '/images/deal-1.png', oldPrice: '75.00', newPrice: '60.00' },
-    { name: 'Banana', imageSrc: '/images/deal-2.png', oldPrice: '80.00', newPrice: '70.00' },
+    { name: 'Cherry', image: '/images/deal-1.png', oldPrice: 65.00, price: 50.00 },
+    { name: 'Pineapple', image: '/images/deal-2.png', oldPrice: 65.00, price: 50.00 },
+    { name: 'Apple', image: '/images/deal-1.png', oldPrice: 75.00, price: 60.00 },
+    { name: 'Banana', image: '/images/deal-2.png', oldPrice: 80.00, price: 70.00 },
   ];
 
   const allProducts = [...products, ...products, ...products];

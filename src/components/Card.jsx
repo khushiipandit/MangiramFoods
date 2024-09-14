@@ -1,0 +1,66 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
+const ProductCard = ({ product }) => {
+  const navigate = useNavigate();
+
+  const handleViewDetails = () => {
+    navigate(`/product/${product.name}`, { state: { product } });
+  };
+
+  const handleBuyNow = (e) => {
+    e.stopPropagation();
+    console.log(`Buying ${product.name}`);
+  };
+
+  return (
+    <div 
+      className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-xl border border-slate-200 hover:border-slate-300 cursor-pointer"
+      onClick={handleViewDetails}
+    >
+      <div className="relative overflow-hidden group">
+        <img 
+          src={product.image} 
+          alt={product.name} 
+          className="w-full h-32 my-6 object-contain transition duration-300 ease-in-out group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
+          <button 
+            className="bg-white text-gray-800 font-semibold py-2 px-4 rounded-full hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleViewDetails();
+            }}
+          >
+            View Details
+          </button>
+        </div>
+      </div>
+      <div className="p-4 flex-grow flex flex-col justify-between">
+        <div>
+          <h3 className="text-lg font-semibold mb-2 text-center">{product.name}</h3>
+          <div className="flex justify-center items-center space-x-2 mb-3">
+            <p className="text-[#7fba00] font-bold text-xl">${product.price.toFixed(2)}</p>
+            <p className="text-gray-500 line-through text-sm">${(product.price * 1.2).toFixed(2)}</p>
+          </div>
+        </div>
+        <div className="flex flex-col space-y-2">
+          <button 
+            className="bg-[#7fba00] text-white font-semibold py-2 px-4 rounded-full hover:bg-[#6ca300] transition duration-300 ease-in-out transform hover:scale-105"
+            onClick={handleBuyNow}
+          >
+            Buy Now
+          </button>
+          <button 
+            className="md:hidden border-2 border-[#7fba00] text-[#7fba00] font-semibold py-2 px-4 rounded-full hover:bg-[#7fba00] hover:text-white transition duration-300 ease-in-out transform hover:scale-105"
+            onClick={handleViewDetails}
+          >
+            View Product
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProductCard;
