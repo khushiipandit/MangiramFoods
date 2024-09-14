@@ -1,144 +1,86 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logoImage from '/src/images/bg.jpg';
-// import cartIcon from '/src/images/bg2.jpg';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const navRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+      setScrolled(window.scrollY > 100);
+    };
+
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setMenuOpen(false);
       }
     };
 
     if (isHomePage) {
       window.addEventListener('scroll', handleScroll);
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
     }
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      if (isHomePage) {
+        window.removeEventListener('scroll', handleScroll);
+      }
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, [isHomePage]);
 
-  const navbarStyle = {
-    width: '100%',
-    maxWidth: '100%',
-    padding: isHomePage 
-      ? (scrolled ? '0.75rem 2rem' : '2rem 3rem')
-      : '0.75rem 2rem',
-    position: isHomePage ? 'fixed' : 'static',
-    top: '0',
-    left: '0',
-    zIndex: '1000',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    transition: 'background-color 0.1s ease',
-    backgroundColor: isHomePage 
-      ? (scrolled ? 'white' : 'transparent')
-      : 'white',
-    boxShadow: isHomePage 
-      ? (scrolled ? '0 2px 4px rgba(0, 0, 0, 0.1)' : 'none')
-      : '0 2px 4px rgba(0, 0, 0, 0.1)',
-    boxSizing: 'border-box',
-  };
-
-  const logoStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    marginLeft: '0px',
-  };
-
-  const logoImgStyle = {
-    height: '2.5rem',
-    cursor: 'pointer',
-  };
-
-  const logoTextStyle = {
-    marginTop: '5px',
-    fontSize: '11px',
-    color: scrolled ? 'white' : 'black',
-    textAlign: 'left',
-    marginLeft: '0px',
-    display: scrolled ? 'none' : 'block',
-  };
-
-  const navLinksStyle = {
-    listStyle: 'none',
-    display: 'flex',
-    justifyContent: 'center',
-    flex: '1',
-    padding: 0,
-    margin: 0,
-  };
-
-  const navLinkItemStyle = (path) => ({
-    marginLeft: '1.25rem',
-    transition: 'color 0.1s ease',
-    fontWeight: '500',
-    letterSpacing: '-0.25px',
-    color: location.pathname === path ? '#22c55e' : '#3c3c3c', // green-500 if active
-    fontSize: '1rem'
-  });
-
-  const navLinkStyle = {
-    textDecoration: 'none',
-  };
-
-  // const cartStyle = {
-    // display: 'flex',
-    // alignItems: 'center',
-    // fontSize: '14px',
-    // cursor: 'pointer',
-  // };
-
-  // const cartIconStyle = {
-    // width: '28px',
-    // height: '28px',
-    // marginRight: '5px',
-  // };
-
-  // const menuIconStyle = {
-    // width: '30px',
-    // height: '30px',
-    // cursor: 'pointer',
-    // marginLeft: '0px'
-  // };
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <nav style={navbarStyle}>
-      <div style={logoStyle}>
-        <img src={logoImage} alt="Logo" style={logoImgStyle} />
-        <span style={logoTextStyle}>ORGANIC STORE</span>
-      </div>
-      <div className='flex items-center gap-8'>
-        <ul style={navLinksStyle}>
-          <li style={navLinkItemStyle('/')}>
-            <Link to="/" style={navLinkStyle}>
-              HOME
-            </Link>
-          </li>
-          <li style={navLinkItemStyle('/about')}>
-            <Link to="/about" style={navLinkStyle}>
-              ABOUT US
-            </Link>
-          </li>
-          <li style={navLinkItemStyle('/shop')}>
-            <Link to="/shop" style={navLinkStyle}>
-              SHOP
-            </Link>
-          </li>
-          <li style={navLinkItemStyle('/contact')}>
-            <Link to="/contact" style={navLinkStyle}>
-              CONTACT US
-            </Link>
-          </li>
+    <nav ref={navRef} className={`
+      w-full max-w-full fixed top-0 left-0 z-50
+      ${isHomePage ? (scrolled ? 'bg-white shadow-md' : 'bg-transparent') : 'bg-white shadow-md'}
+      transition-all duration-300 ease-in-out
+    `}>
+      <div className="container mx-auto px-6 sm:px-8 md:px-10 py-3 md:py-4 flex justify-between items-center">
+        <Link to="/" className="flex items-start text-left justify-start  flex-col">
+          <img src={logoImage} alt="Logo" className="h-8 md:h-10" />
+          <span className={`
+             text-xs md:text-sm font-medium  text-black mt-2 text-left
+            ${scrolled || !isHomePage ? 'hidden' : 'block'}
+          `}>
+            ORGANIC STORE
+          </span>
+        </Link>
+
+        <div className="md:hidden">
+          <button onClick={toggleMenu} className="text-gray-600 focus:outline-none">
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+            </svg>
+          </button>
+        </div>
+
+        <ul className={`
+          md:flex md:items-center md:space-x-6
+          ${menuOpen ? 'absolute top-full left-0 right-0 bg-white shadow-md p-4' : 'hidden'}
+          md:static md:bg-transparent md:shadow-none md:p-0
+        `}>
+          {['HOME', 'ABOUT', 'SHOP', 'CONTACT'].map((item) => (
+            <li key={item} className="py-2 md:py-0">
+              <Link
+                to={item === 'HOME' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
+                className={`
+                  text-base font-medium tracking-wide
+                  ${location.pathname === (item === 'HOME' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`) ? 'text-green-500' : 'text-gray-700'}
+                  hover:text-green-500 transition-colors duration-300
+                `}
+                onClick={() => setMenuOpen(false)}
+              >
+                {item}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>

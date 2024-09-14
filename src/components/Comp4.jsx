@@ -1,203 +1,141 @@
-// import necessary dependencies
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
-
-  const styles = {
-    card: {
-      width: '400px',
-      height: '300px',
-      padding: '20px',
-      backgroundColor: 'white',
-      marginLeft: '40px',
-      marginRight: '40px',
-      borderRadius: '10px',
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-      position: 'relative',
-      overflow: 'visible',
-      justifyContent: 'space-between',
-      gap: '200px',
-      alignItems: 'center',
-      cursor: 'pointer', // Add this to indicate it's clickable
-    },
-    leftIcons: {
-      display: 'flex',
-      marginLeft:'-190px',
-      flexDirection: 'column',
-      alignItems: 'center',
-      paddingRight: '10px',
-      borderRight: '1px solid black',
-      gap: '10px',
-    },
-    icon: {
-      fontSize: '20px',
-      color: '#888',
-      cursor: 'pointer',
-    },
-    badgeContainer: {
-      display: 'flex',
-      gap: '10px',
-    },
-    badge: {
-      backgroundColor: '#4CAF50',
-      color: '#fff',
-      padding: '5px 12px',
-      borderRadius: '20px',
-      fontSize: '12px',
-    },
-    saleBadge: {
-      backgroundColor: '#00C4CC',
-    },
-    productInfo: {
-      flex: 1,
-      marginLeft:'40px',
-      marginTop:'-80px'
-    },
-    productSubtitle: {
-      fontSize: '12px',
-      color: '#666',
-      marginBottom: '5px',
-      textTransform: 'uppercase',
-      letterSpacing: '1px',
-    },
-    productTitles: {
-      fontSize: '22px',
-      fontWeight: 'bold',
-      color: '#333',
-      marginBottom: '10px',
-      textTransform: 'capitalize',
-    },
-    priceContainer: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: '10px',
-      marginBottom: '10px',
-    },
-    newPrices: {
-      fontSize: '18px',
-      fontWeight: 'bold',
-      color: '#4CAF50',
-    },
-    oldPrices: {
-      fontSize: '16px',
-      textDecoration: 'line-through',
-      color: '#888',
-    },
-    productImage: {
-      position: 'relative',
-      top: '7px',
-      height: '200px',
-      marginLeft: 'auto',
-      zIndex: '1',
-    },
-  };
 
   const handleClick = () => {
     navigate(`/product/${product.name}`);
   };
 
+  const handleBuyNow = (e) => {
+    e.stopPropagation();
+    console.log(`Buying ${product.name}`);
+  };
+
   return (
-    <div style={styles.card} onClick={handleClick}>
-      <div style={styles.leftIcons}>
-        <i className="fas fa-heart" style={styles.icon}></i>
-        <i className="fas fa-shopping-cart" style={styles.icon}></i>
-        <i className="fas fa-share-alt" style={styles.icon}></i>
-      </div>
-      <div style={styles.productInfo}>
-        <div style={styles.badgeContainer}>
-          <span style={styles.badge}>NEW</span>
-          <span style={{ ...styles.badge, ...styles.saleBadge }}>SALE</span>
+    <div className="w-64 h-96 p-4 bg-white m-2 rounded-lg shadow-md flex flex-col justify-between cursor-pointer transition-transform duration-300 hover:scale-105" onClick={handleClick}>
+      <div>
+        <div className="flex gap-2 mb-2">
+          <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs">NEW</span>
+          <span className="bg-cyan-500 text-white px-3 py-1 rounded-full text-xs">SALE</span>
         </div>
-        <div style={styles.productSubtitle}>ORGANIC FRUITS</div>
-        <div style={styles.productTitles}>fresh {product.name}</div>
-        <div style={styles.priceContainer}>
-          <span style={styles.newPrices}>${product.newPrices}</span>
-          <span style={styles.oldPrices}>${product.oldPrice}</span>
+        <img src={product.imageSrc} alt={product.name} className="w-full h-40 object-contain mb-4" />
+        <div className="text-center">
+          <div className="text-xs text-gray-600 uppercase tracking-wide mb-1">ORGANIC FRUITS</div>
+          <div className="text-lg font-bold text-gray-800 mb-2 capitalize">fresh {product.name}</div>
         </div>
       </div>
-      <img src={product.imageSrc} alt={product.name} style={styles.productImage} />
+      <div>
+        <div className="flex justify-center items-center gap-2 mb-3">
+          <span className="text-lg font-bold text-green-500">${product.newPrice}</span>
+          <span className="text-sm line-through text-gray-400">${product.oldPrice}</span>
+        </div>
+        <button 
+          className="w-full bg-green-500 text-white py-2 px-4 rounded-md text-sm font-semibold transition-colors duration-300 hover:bg-green-600"
+          onClick={handleBuyNow}
+        >
+          Buy Now
+        </button>
+      </div>
     </div>
   );
 };
 
 const Comp4 = () => {
-  const styles = {
-    container: {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      gap: '20px',
-      marginTop: '50px',
-      padding: '0 40px',
-    },
-    footer: {
-      textAlign: 'center',
-      marginTop: '-40px',
-      marginLeft: '50px',
-      color: '#666',
-      fontWeight: 'bold',
-      fontSize: '14px',
-    },
-    footer_image: {
-      height: '80px',
-      marginLeft: '650px',
-      alignItems: 'center',
-    },
-  };
+  const [startAnimation, setStartAnimation] = useState(false);
+  const cardsRef = useRef(null);
 
   const products = [
-    {
-      name: 'Cherry',
-      imageSrc: '/src/images/deal-1.png', // replace with actual image path
-      oldPrice: '65.00',
-      newPrice: '50.00',
-    },
-    {
-      name: 'Pineapple',
-      imageSrc: '/src/images/deal-2.png', // replace with actual image path
-      oldPrice: '65.00',
-      newPrice: '50.00',
-    },
-    {
-      name: 'Apple',
-      imageSrc: '/src/images/deal-1.png', // replace with actual image path
-      oldPrice: '75.00',
-      newPrice: '60.00',
-    },
-    {
-      name: 'Banana',
-      imageSrc: '/src/images/deal-2.png', // replace with actual image path
-      oldPrice: '80.00',
-      newPrice: '70.00',
-    },
+    { name: 'Cherry', imageSrc: '/src/images/deal-1.png', oldPrice: '65.00', newPrice: '50.00' },
+    { name: 'Pineapple', imageSrc: '/src/images/deal-2.png', oldPrice: '65.00', newPrice: '50.00' },
+    { name: 'Apple', imageSrc: '/src/images/deal-1.png', oldPrice: '75.00', newPrice: '60.00' },
+    { name: 'Banana', imageSrc: '/src/images/deal-2.png', oldPrice: '80.00', newPrice: '70.00' },
   ];
 
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 2,
-  };
+  const allProducts = [...products, ...products, ...products];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setStartAnimation(true);
+        } else {
+          setStartAnimation(false);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (cardsRef.current) {
+      observer.observe(cardsRef.current);
+    }
+
+    return () => {
+      if (cardsRef.current) observer.unobserve(cardsRef.current);
+    };
+  }, []);
 
   return (
-    <div>
-      <div {...sliderSettings} style={styles.container}>
-        {products.map((product, index) => (
-          <ProductCard key={index} product={product} />
-        ))}
+    <div className="mt-12">
+      <style>
+        {`
+          @keyframes scrolling {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(calc(-280px * ${products.length}));
+            }
+          }
+          .scrolling-container {
+            display: flex;
+            width: fit-content;
+          }
+          .scrolling-container > div {
+            flex: 0 0 auto;
+          }
+          @media (max-width: 768px) {
+            @keyframes scrolling-mobile {
+              0%, 25% {
+                transform: translateX(0);
+              }
+              33%, 58% {
+                transform: translateX(-100%);
+              }
+              66%, 91% {
+                transform: translateX(-200%);
+              }
+              100% {
+                transform: translateX(-300%);
+              }
+            }
+            .scrolling-container {
+              animation: scrolling-mobile 12s linear infinite !important;
+            }
+          }
+        `}
+      </style>
+
+      <div ref={cardsRef} className="overflow-hidden relative mx-auto" >
+        <div 
+          className="scrolling-container py-4 gap-0 md:gap-4"
+          style={{
+            animation: startAnimation ? `scrolling ${products.length * 12}s linear infinite` : 'none',
+          }}
+        >
+          {allProducts.map((product, index) => (
+            <div key={index} className="w-full md:w-auto">
+              <ProductCard product={product} />
+            </div>
+          ))}
+        </div>
       </div>
-      <div style={{ marginTop: '90px', color: '#f9f9ff9' }}>
-        <img src="/src/images/spinach.png" alt="Organic Vegetables" style={{ width: '300px', maxWidth: '100%', marginLeft: '-10px' }} />
+
+      <div className="mt-8 text-center">
+        <img src="/src/images/spinach.png" alt="Organic Vegetables" className="w-48 max-w-full mx-auto" />
       </div>
-      <div style={styles.footer}>
-        <img src="/src/images/icon-1.png" alt="Grapefruit" style={styles.footer_image} />
-        <div>⭐⭐⭐ a taste of <strong>real food</strong> ⭐⭐⭐</div>
-      </div>
+     
     </div>
   );
 };

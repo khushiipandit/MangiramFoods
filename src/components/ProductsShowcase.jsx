@@ -53,16 +53,16 @@ const ProductsShowcase = () => {
   ];
 
   return (
-    <div className="bg-white px-24 py-12 mb-10"> 
+    <div className="bg-white px-4 sm:px-8 md:px-16 lg:px-24 py-12 mb-10">
       <div className="flex flex-col items-center mb-8">
-        <img src="/src/images/feature.png" alt="Grapefruit" className=" h-20 mb-2" />
-        <div className="text-sm text-green-600">
+        <img src="/src/images/feature.png" alt="Grapefruit" className="h-16 sm:h-20 mb-2" />
+        <div className="text-sm text-green-600 text-center">
           <span className="text-green-500">★</span> a taste of <strong>real food</strong> <span className="text-green-500">★</span>
         </div>
       </div>
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="mb-8 sm:mb-0">
             <h2 className="text-xs tracking-[0.25rem] text-zinc-600 mb-1">NEW FROM THE FARM</h2>
             <h3 className="text-2xl font-light mb-6 text-zinc-700">organic <span className="font-bold">new arrivals</span></h3>
             <div className="space-y-4">
@@ -71,7 +71,7 @@ const ProductsShowcase = () => {
               ))}
             </div>
           </div>
-          <div>
+          <div className="mb-8 sm:mb-0">
             <h2 className="text-xs tracking-[0.25rem] text-zinc-600 mb-1">BEST SELLER</h2>
             <h3 className="text-2xl font-light mb-6 text-zinc-700">organic <span className="font-bold">popular</span></h3>
             <div className="space-y-4">
@@ -80,7 +80,7 @@ const ProductsShowcase = () => {
               ))}
             </div>
           </div>
-          <div>
+          <div className="mb-8 sm:mb-0">
             <h2 className="text-xs tracking-[0.25rem] text-zinc-600 mb-1">CUSTOMER NEEDS</h2>
             <h3 className="text-2xl font-light mb-6 text-zinc-700">organic <span className="font-bold">random</span></h3>
             <div className="space-y-4">

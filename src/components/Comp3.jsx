@@ -1,4 +1,4 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const Comp3 = () => {
     const calculateTimeLeft = () => {
@@ -26,149 +26,41 @@ const Comp3 = () => {
         return () => clearTimeout(timer);
     });
 
-    const styles = {
-        dealContainer: {
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            backgroundColor: '#f9f9f9',
-            padding: '40px',
-            textAlign: 'center',
-            position: 'relative',
-        },
-        dealText: {
-            marginBottom: '20px',
-            display: 'flex',
-            flexDirection: 'block',
-        },
-        tamatar_ka_left: {
-            display: 'flex',
-            flexDirection: 'column',
-        },
-        dealTextH5: {
-            fontSize: '14px',
-            letterSpacing: '2px',
-            color: '#888',
-            textTransform: 'uppercase',
-            marginLeft: '300px',
-            marginTop: '60px',
-            marginBottom: '2px',
-        },
-        dealTextH1: {
-            fontSize: '36px',
-            fontWeight: '400',
-            color: '#333',
-            marginLeft: '140px',
-            marginBottom: '40px',
-        },
-        discount: {
-            color: '#4e8734',
-            fontWeight: '600',
-        },
-        dealTextP: {
-            color: '#666',
-            marginTop: '50px',
-            marginLeft:'28px',
-            lineHeight: '1.6',
-            maxWidth: '500px',
-            margin: '0 auto',
-            textAlign: 'left', // Adjusted to be left-aligned
-        },
-        dealImage: {
-            marginTop: '40px',
-            marginLeft: '10px',
-        },
-        timer: {
-            display: 'flex',
-            justifyContent: 'center',
-            
-            marginTop: '40px',
-            gap: '20px',
-        },
-        timerItem: {
-            
-            border: '4px solid #00C4CC',
-            backgroundColor: '#f9f9f9',
-            borderRadius: '10px',
-            height:'100px',
-            padding: '20px',
-            textAlign: 'center',
-            width: '100px',
-        },
-        timerItemSpan: {
-            display: 'block',
-            fontSize: '36px',
-            marginTop:'-19px',
-            marginLeft:'-7px',
-            color: '#4e8734',
-            fontWeight: 'bold',
-        },
-        timerItemText: {
-            color: '#555',
-            fontSize: '14px',
-            marginLeft:'-7px',
-            textTransform: 'uppercase',
-            letterSpacing: '1px',
-        },
-        separatorLine: {
-            width: '700px',
-            height: '2px',
-            backgroundColor: '#fff',
-            position: 'relative',
-            margin: '10px 0',
-            marginBottom:'20px'
-        },
-        greenMiddleLine: {
-            width: '150px',
-            height: '2px',
-            backgroundColor: '#4e8734',
-            position: 'absolute',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            top: '0',
-        },
-    };
-
     return (
-        <div style={styles.dealContainer}>
-            <div style={styles.dealText}>
-                <div style={styles.tamatar_ka_left}>
-                    <h5 style={styles.dealTextH5}>NATURIX DEAL OF THE DAY</h5>
-                    <h1 style={styles.dealTextH1}>
-                        organic goods <span style={styles.discount}>50% off</span>
-                    </h1>
+        <div className="bg-[#f9f9f9] py-10 px-4 sm:px-6 lg:px-8 text-center relative">
+            <div className="max-w-7xl mx-auto">
+                <div className="flex flex-col md:flex-row items-center justify-center mb-8">
+                    <div className="md:w-1/2 mb-6 md:mb-0">
+                        <h5 className="text-sm tracking-wider text-gray-500 uppercase mb-2">NATURIX DEAL OF THE DAY</h5>
+                        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-gray-800 mb-4">
+                            organic goods <span className="text-[#4e8734] font-semibold">50% off</span>
+                        </h1>
+                        <p className="text-gray-600 leading-relaxed max-w-lg mx-auto md:mx-0 md:text-left">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh
+                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                        </p>
+                    </div>
+                    <div className="md:w-1/2 flex justify-center">
+                        <img src="/src/images/deal.png" alt="Organic Tomatoes" className="w-40 sm:w-48 lg:w-56" />
+                    </div>
                 </div>
 
-                <div style={styles.dealImage}>
-                    <img src="/src/images/deal.png" alt="Organic Tomatoes" style={{ width: '170px' }} />
+                {/* Separator Line */}
+                <div className="relative h-0.5 bg-white my-8">
+                    <div className="absolute left-1/2 transform -translate-x-1/2 top-0 w-36 h-0.5 bg-[#4e8734]"></div>
                 </div>
-                <p style={styles.dealTextP}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh
-                    euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                </p>
-            </div>
 
-            {/* Separator Line */}
-            <div style={styles.separatorLine}>
-                <div style={styles.greenMiddleLine}></div>
-            </div>
-
-            <div style={styles.timer}>
-                <div style={styles.timerItem}>
-                    <span style={styles.timerItemSpan}>{timeLeft.days}</span>
-                    <div style={styles.timerItemText}>Days</div>
-                </div>
-                <div style={styles.timerItem}>
-                    <span style={styles.timerItemSpan}>{timeLeft.hours}</span>
-                    <div style={styles.timerItemText}>Hours</div>
-                </div>
-                <div style={styles.timerItem}>
-                    <span style={styles.timerItemSpan}>{timeLeft.minutes}</span>
-                    <div style={styles.timerItemText}>Minutes</div>
-                </div>
-                <div style={styles.timerItem}>
-                    <span style={styles.timerItemSpan}>{timeLeft.seconds}</span>
-                    <div style={styles.timerItemText}>Seconds</div>
+                <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+                    {['days', 'hours', 'minutes', 'seconds'].map((unit) => (
+                        <div key={unit} className="w-20 h-20 sm:w-24 sm:h-24 border-4 border-[#00C4CC] bg-[#f9f9f9] rounded-lg flex flex-col justify-center items-center">
+                            <span className="text-2xl sm:text-3xl font-bold text-[#4e8734]">
+                                {timeLeft[unit]}
+                            </span>
+                            <div className="text-xs sm:text-sm uppercase tracking-wide text-gray-600">
+                                {unit}
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

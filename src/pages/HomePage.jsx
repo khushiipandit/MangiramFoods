@@ -9,7 +9,7 @@ import ProductsShowcase from '../components/ProductsShowcase';
 
 const HomePage = () => {
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', maxWidth: '100%', overflowX: 'hidden' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', maxWidth: '100%', overflow: 'hidden' }}>
             {/* Hero Section */}
             <Hero />
             <Products />
@@ -19,7 +19,7 @@ const HomePage = () => {
                 <OrganicFarmFood />
             </div>
 
-            <div style={{ marginTop: '140px', flexGrow: 1, padding: '2px', marginLeft: '100px', maxWidth: '100%' }}>
+            <div style={{ flexGrow: 1, padding: '2px', maxWidth: '100%' }}>
                 <Comp1 />
             </div>
 
@@ -30,11 +30,11 @@ const HomePage = () => {
             <div style={{ marginTop: '5px', flexGrow: 1, padding: '3px', marginLeft: '0px', marginRight: '0px', maxWidth: '100%' }}>
                 <Comp3 />
             </div>   
-            <div style={{ marginTop: '-5px', flexGrow: 1, padding: '3px' ,height:'620px',backgroundColor:'#f9f9f9'}}>
+            <div style={{ marginTop: '-5px', flexGrow: 1, padding: '3px' ,backgroundColor:'#f9f9f9'}}>
                 <Comp4 />
             </div>
 
-            <div style={{ marginTop: '10px', flexGrow: 1, padding: '3px', marginLeft: '0px', marginRight: '0px', height: '620px', maxWidth: '100%' }}>
+            <div style={{ marginTop: '10px', flexGrow: 1, padding: '3px', marginLeft: '0px', marginRight: '0px', maxWidth: '100%' }}>
                 <ProductsShowcase />
             </div>
         </div>

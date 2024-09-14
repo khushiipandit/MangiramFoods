@@ -2,32 +2,55 @@
   import Slider from 'react-slick';
   import 'slick-carousel/slick/slick.css';
   import 'slick-carousel/slick/slick-theme.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
-  export const ProductCard = ({ product }) => {
-    return (
-      <div className="relative bg-white rounded-2xl shadow-md overflow-hidden flex flex-col px-2 pt-16 pb-0 border border-zinc-300 hover:border-zinc-400 hover:shadow-lg transition">
-        <img src={product.image} alt={product.name} className="w-full h-28 object-contain" />
-        <div className="py-2  flex-grow flex flex-col justify-between">
-          <h3 className="text-lg text-center font-semibold mb-2">{product.name}</h3>
-          <div className="flex  justify-center gap-2 items-center">
-            <p className="text-[#7fba00] font-bold">${product.price.toFixed(2)}</p>
-            <p className="text-gray-500 line-through">${(product.price * 1.2).toFixed(2)}</p>
-          </div>
-          <div className='gap-1 flex flex-col  mt-4'>
-<button className='bg-[#7fba00] text-center text-base w-full py-2 rounded-lg border-2 text-white hover:border-[#7fba00] hover:bg-white shadow-sm hover:shadow-md transition hover:text-black'>Buy Now</button>
-<button className='border-[#7fba00] text-center w-full text-base  py-2 rounded-lg border-2 text-black hover:bg-[#7fba00]  shadow-sm hover:text-white hover:shadow-md transition'>Add to Cart</button>
+export const ProductCard = ({ product }) => {
+  const navigate = useNavigate();
 
-          </div>
+  const handleViewDetails = () => {
+    navigate(`/product/${product.name}`, { state: { product } });
+  };
+
+  return (
+    <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-xl border border-slate-200 hover:border-slate-300">
+      <div className="relative overflow-hidden group">
+        <img 
+          src={product.image} 
+          alt={product.name} 
+          className="w-full h-32 my-6 object-contain transition duration-300 ease-in-out group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
+          <button 
+            className="bg-white text-gray-800 font-semibold py-2 px-4 rounded-full hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105"
+            onClick={handleViewDetails}
+          >
+            View Details
+          </button>
         </div>
       </div>
-    );
-  };
+      <div className="p-4 flex-grow flex flex-col justify-between">
+        <div>
+          <h3 className="text-lg font-semibold mb-2 text-center">{product.name}</h3>
+          <div className="flex justify-center items-center space-x-2 mb-3">
+            <p className="text-[#7fba00] font-bold text-xl">${product.price.toFixed(2)}</p>
+            <p className="text-gray-500 line-through text-sm">${(product.price * 1.2).toFixed(2)}</p>
+          </div>
+        </div>
+        <div className="flex flex-col space-y-2">
+          <button className="bg-[#7fba00] text-white font-semibold py-2 px-4 rounded-full hover:bg-[#6ca300] transition duration-300 ease-in-out transform hover:scale-105">
+            Buy Now
+          </button>
+          
+        </div>
+      </div>
+    </div>
+  );
+};
 
   export const Products = () => {
     const categories = ['organic fruits', 'organic vegetables', 'organic dried fruits', 'organic juices'];
-    const [activeCategory, setActiveCategory] = useState('organic vegetables');
+    const [activeCategory, setActiveCategory] = useState('all');
 
     const products = [
       { id: 1, name: 'Organic Tomato', price: 50.00, image: '/src/images/products-head-fruit.png', category: 'organic vegetables' },
@@ -39,73 +62,107 @@ import { Link } from 'react-router-dom';
 
       { id: 7, name: 'Organic Pineapple', price: 50.00, image: '/src/images/products-head-fruit.png', category: 'organic fruits' },
        { id: 8, name: 'Organic Pineapple', price: 50.00, image: '/src/images/products-head-fruit.png', category: 'organic fruits' },
-        { id: 9, name: 'Organic Pineapple', price: 50.00, image: '/src/images/products-head-fruit.png', category: 'organic fruits' },
+      
         
 
     ];
 
-    const filteredProducts = products.filter(product => product.category === activeCategory);
+    const filteredProducts = activeCategory === 'all' 
+      ? products 
+      : products.filter(product => product.category === activeCategory);
 
-    const sliderSettings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 5,
-      slidesToScroll: 1,
+    const handleCategoryClick = (category) => {
+      setActiveCategory(prev => prev === category ? 'all' : category);
     };
-  
+
     return (
       <div className="bg-white py-6">
-        <div className="container mx-auto">
-          <div className="text-center mb-20 flex justify-center items-end">
-            <div className="flex space-x-4">
-              {categories.slice(0, 2).map((category) => (
+        <div className="container mx-auto px-4">
+          {/* Small and Medium devices layout */}
+          <div className="md:hidden text-center mb-10">
+            <div className="flex flex-col items-center mb-6">
+              <img src="/src/images/products-head-fruit.png" alt="Fruits" className="w-auto h-16 object-cover rounded-lg mb-4" />
+              <img src="/src/images/product-organic.png" alt="Organic" className="w-auto h-20 object-cover rounded-lg mb-6" />
+              
+              <div className="flex flex-wrap justify-center items-center gap-4 mt-4">
                 <button
-                  key={category}
-                  className={`px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap -mt-4 ${
-                    activeCategory === category 
-                      ? 'bg-[#7fba00] text-white shadow-lg' 
-                      : 'bg-white text-gray-600 border border-gray-300 hover:border-[#7fba00] hover:text-[#7fba00]'
-                  }`}
-                  onClick={() => setActiveCategory(category)}
+                  className="px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 whitespace-nowrap
+                    bg-white text-gray-600 border border-gray-300 hover:border-[#7fba00] hover:text-[#7fba00]"
+                  onClick={() => setActiveCategory('all')}
                 >
-                  {category}
+                  all
                 </button>
-              ))}
-            </div>
-            <div className="flex flex-col items-center mx-16 -mb-6">
-              <img src="/src/images/products-head-fruit.png" alt="Fruits" className="w-auto h-20 object-cover rounded-lg mb-2" />
-              <img src="/src/images/product-organic.png" alt="Fruits" className="w-auto h-24 object-cover rounded-lg -mt-4" />
-            </div>
-            <div className="flex space-x-4">
-              {categories.slice(2).map((category) => (
-                <button
-                  key={category}
-                  className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap -mt-4 ${
-                    activeCategory === category 
-                      ? 'bg-[#7fba00] text-white shadow-lg' 
-                      : 'bg-white text-gray-600 border-2 border-gray-300 hover:border-[#7fba00] hover:text-[#7fba00]'
-                  }`}
-                  onClick={() => setActiveCategory(category)}
-                >
-                  {category}
-                </button>
-              ))}
+                
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 whitespace-nowrap ${
+                      activeCategory === category 
+                        ? 'bg-[#7fba00] text-white shadow-lg' 
+                        : 'bg-white text-gray-600 border border-gray-300 hover:border-[#7fba00] hover:text-[#7fba00]'
+                    }`}
+                    onClick={() => handleCategoryClick(category)}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
-          
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 w-[85%] m-auto">
-              {products.map((product) => (
-                <div key={product.id} className="p-2">
+
+          {/* Large devices layout */}
+          <div className="hidden md:block text-center mb-20">
+            <div className="flex justify-center items-end">
+              <div className="flex space-x-4">
+                {categories.slice(0, 2).map((category) => (
+                  <button
+                    key={category}
+                    className={`px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap -mt-4 ${
+                      activeCategory === category 
+                        ? 'bg-[#7fba00] text-white shadow-lg' 
+                        : 'bg-white text-gray-600 border border-gray-300 hover:border-[#7fba00] hover:text-[#7fba00]'
+                    }`}
+                    onClick={() => handleCategoryClick(category)}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+              <div className="flex flex-col items-center mx-16 -mb-6">
+                <img src="/src/images/products-head-fruit.png" alt="Fruits" className="w-auto h-20 object-cover rounded-lg mb-2" />
+                <img src="/src/images/product-organic.png" alt="Fruits" className="w-auto h-24 object-cover rounded-lg -mt-4" />
+              </div>
+              <div className="flex space-x-4">
+                {categories.slice(2).map((category) => (
+                  <button
+                    key={category}
+                    className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap -mt-4 ${
+                      activeCategory === category 
+                        ? 'bg-[#7fba00] text-white shadow-lg' 
+                        : 'bg-white text-gray-600 border-2 border-gray-300 hover:border-[#7fba00] hover:text-[#7fba00]'
+                    }`}
+                    onClick={() => handleCategoryClick(category)}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="w-full flex justify-center items-center">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6 w-[85%]">
+              {filteredProducts.map((product) => (
+                <div key={product.id} className="w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1rem)] p-2">
                   <ProductCard product={product} />
                 </div>
               ))}
             </div>
-         <div className='w-full flex justify-center items-center mt-4'>
-<button className="px-8 py-2 text-lg font-medium text-black border border-green-500 rounded-full block m-auto hover:bg-green-500 hover:text-white transition">
-  <Link to="/shop" >View More</Link>
-  </button>
-</div>
+          </div>
+          <div className='w-full flex justify-center items-center mt-8'>
+            <Link to="/shop" className="px-6 py-2 text-base md:text-lg font-medium text-black border-2 border-green-500 rounded-full hover:bg-green-500 hover:text-white transition">
+              View More
+            </Link>
+          </div>
         </div>
       </div>
     );

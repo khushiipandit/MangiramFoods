@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Comp1 from '../components/Comp1';
 import OrganicFarmFood from './OrganicFarmFood';
 import Comp5 from '../components/Comp5';
@@ -7,243 +8,137 @@ import Comp2 from '../components/Comp2';
 
 const Shop = () => {
   const [price, setPrice] = useState(500);
+  const navigate = useNavigate();
 
   const handlePriceChange = (e) => {
     setPrice(e.target.value);
   };
 
+  const handleViewDetails = (product) => {
+    navigate(`/product/${product.name}`, { state: { product } });
+  };
+
   const products = [
     {
       name: 'organic mushroom',
-      price: '$50.00',
-      originalPrice: '$65.00',
+      price: 50.00,
+      originalPrice: 65.00,
       image: '/src/images/mashroom.png',
     },
     {
       name: 'organic onion',
-      price: '$50.00',
-      originalPrice: '$65.00',
+      price: 50.00,
+      originalPrice: 65.00,
       image: '/src/images/onion.png',
     },
     {
       name: 'organic cherry',
-      price: '$50.00',
-      originalPrice: '$65.00',
+      price: 50.00,
+      originalPrice: 65.00,
       image: '/src/images/cherryy.png',
     },
     {
       name: 'organic pineapple',
-      price: '$50.00',
-      originalPrice: '$65.00',
+      price: 50.00,
+      originalPrice: 65.00,
       image: '/src/images/pinapple.png',
     },
   ];
 
-  const styles = {
-    aboutPage: {
-      fontFamily: 'Arial, sans-serif',
-      backgroundColor: 'white',
-      marginTop: "60px",
-    },
-    aboutHeader: {
-      position: 'relative',
-      overflow: 'visible',
-      marginTop: '129px',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      backgroundColor: '#f0f4ed',
-      padding: '40px',
-      overflow: 'hidden',
-    },
-    aboutTitle: {
-      fontSize: '36px',
-      color: '#333',
-      marginLeft: '130px'
-    },
-    highlight: {
-      color: 'black',
-      fontWeight: 'bold'
-    },
-    breadcrumb: {
-      fontSize: '12px',
-      color: '#888',
-      marginTop: '0px',
-      marginLeft: '130px'
-    },
-    aboutImage: {
-      position: 'absolute',
-      marginRight: '400px',
-      top: '0',
-      right: '0',
-      backgroundImage: 'url("/src/images/badam.png")',
-      backgroundPosition: 'right top',
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'contain',
-      width: '600px',
-      height: '200px',
-    },
-    image2: {
-      width: "100%",
-      marginTop: '-90px',
-      position: 'relative',
-      zIndex: 1,
-      top: '55px',
-    },
-    containerStyle: {
-      display: 'flex',
-      height: '10px',
-      width: '100%',
-      flexDirection: 'column',
-      alignItems: 'center',
-      textAlign: 'center',
-      backgroundColor: 'white',
-    },
-    container: {
-      display: 'flex',
-      justifyContent: 'space-around',
-      alignItems: 'center',
-      padding: '20px',
-      backgroundColor: '#fff',
-    },
-    card: {
-      textAlign: 'center',
-      border: '1px solid #eaeaea',
-      width: '300px',
-      height: '500px',
-      backgroundColor: '#f9f9f9',
-      padding: '15px',
-      borderRadius: '8px',
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    },
-    image: {
-      width: '120px',
-      height: '320px',
-      marginBottom: '28px',
-      marginLeft: '80px',
-      marginTop: '10px',
-    },
-    image_box: {
-      width: '140px',
-      height: '217px',
-      marginBottom: '40px',
-    },
-    title_box: {
-      backgroundColor: 'white',
-      marginTop: '-60px',
-      marginLeft: '-15px',
-      height: '170px',
-      width: '300px',
-    },
-    title: {
-      fontSize: '18px',
-      fontWeight: 'bold',
-      marginLeft: '5px',
-      marginBottom: '10px',
-      marginTop: '140px',
-    },
-    price: {
-      backgroundColor: 'white',
-      fontSize: '16px',
-      color: '#333',
-      marginLeft: '5px',
-      marginTop: '10px',
-    },
-    discountPrice: {
-      color: '#28a745',
-      fontWeight: 'bold',
-    },
-    originalPrice: {
-      color: '#999',
-      textDecoration: 'line-through',
-      marginLeft: '10px',
-    },
-    categoryText: {
-      fontSize: '13px',
-      color: '#888',
-      fontWeight: '300',  // Light font
-      marginRight: '30px',
-    },
-  };
-
   return (
-    <div style={styles.aboutPage}>
-      <section style={styles.aboutHeader}>
-        <div>
-          <h1 style={styles.aboutTitle}>
-            about <span style={styles.highlight}>naturix</span> farmfood
+    <div className="font-sans bg-white mt-16">
+      <section className="relative overflow-hidden bg-[#f0f4ed] py-10 px-4 md:py-16 md:px-10 mt-16">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-3xl md:text-4xl text-gray-800 mb-2">
+            about <span className="font-bold text-black">naturix</span> farmfood
           </h1>
-          <div style={styles.breadcrumb}>
+          <div className="text-sm text-gray-600">
             <span>HOME / ABOUT</span>
           </div>
         </div>
-        <div style={styles.aboutImage}></div>
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-no-repeat bg-contain bg-right-top hidden md:block" style={{backgroundImage: 'url("/src/images/badam.png")'}}></div>
       </section>
-      <img src="/src/images/wave.png" alt="Grapefruit" style={styles.image2} />
 
-      <div style={styles.containerStyle}>
-        {/* Your content goes here */}
-      </div>
+      <img src="/src/images/wave.png" alt="Decorative wave" className="w-full mt-[-90px] relative z-10" />
 
-      <div style={{ textAlign: "center", padding: "20px", fontFamily: "Arial" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginLeft: '140px', marginRight: '130px', marginTop: '20px' }}>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <span style={styles.categoryText}>CATEGORIES</span>
-            <select style={{ padding: "5px", borderRadius: "12px", border: "1px solid #ddd" }}>
+      <div className="text-center p-4 md:p-8 font-sans">
+        <div className="flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto mt-8 space-y-4 md:space-y-0">
+          <div className="flex items-center space-x-2">
+            <span className="text-sm text-gray-500">CATEGORIES</span>
+            <select className="p-2 rounded-full border border-gray-300 text-sm">
               <option>All product</option>
-              {/* Add more options here if needed */}
             </select>
           </div>
 
-          <div>
-          <span style={styles.categoryText}>SORT BY</span>
-            <select style={{ padding: "5px", borderRadius: "12px", border: "1px solid #ddd" }}>
+          <div className="flex items-center space-x-2">
+            <span className="text-sm text-gray-500">SORT BY</span>
+            <select className="p-2 rounded-full border border-gray-300 text-sm">
               <option>Popular item</option>
-              {/* Add more sorting options */}
             </select>
           </div>
 
           <img
             src="/src/images/logo-2.png"
-            alt="Organic Freshh Food"
-            style={{ borderRadius: "50%", padding: "10px", marginLeft: '-10px' }}
+            alt="Organic Fresh Food"
+            className="rounded-full p-2 w-32 h-32"
           />
 
-          <div>
-          <span style={styles.categoryText}>BY PRICE</span>
-            <select style={{ padding: "5px", borderRadius: "12px", border: "1px solid #ddd" }}>
+          <div className="flex items-center space-x-2">
+            <span className="text-sm text-gray-500">BY PRICE</span>
+            <select className="p-2 rounded-full border border-gray-300 text-sm">
               <option>Low to High</option>
               <option>High to Low</option>
             </select>
           </div>
 
-          <div style={{ display: "flex", alignItems: "center", }}>
-            <label style={{ marginRight: "10px",fontWeight: '300' }}>Price</label>
+          <div className="flex items-center space-x-2">
+            <label className="text-sm text-gray-500">Price</label>
             <input
               type="range"
               min="10"
               max="1000"
               value={price}
               onChange={handlePriceChange}
-              style={{ marginRight: "10px" }}
+              className="w-24 md:w-32"
             />
-            <span>${price}</span>
+            <span className="text-sm">${price}</span>
           </div>
         </div>
       </div>
 
-      <div style={styles.container}>
+      <div className="flex flex-wrap justify-center gap-8 p-4 md:p-8">
         {products.map((product, index) => (
-          <div key={index} style={styles.card}>
-            <div style={styles.image_box}>
-              <img src={product.image} alt={product.name} style={styles.image} />
-            </div>
-            <div style={styles.title_box}>
-              <h3 style={styles.title}>{product.name}</h3>
-              <p style={styles.price}>
-                <span style={styles.discountPrice}>{product.price}</span>{' '}
-                <span style={styles.originalPrice}>{product.originalPrice}</span>
-              </p>
+          <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 max-w-xs">
+            <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-xl border border-slate-200 hover:border-slate-300">
+              <div className="relative overflow-hidden group">
+                <img 
+                  src={product.image} 
+                  alt={product.name} 
+                  className="w-full h-32 my-6 object-contain transition duration-300 ease-in-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
+                  <button 
+                    className="bg-white text-gray-800 font-semibold py-2 px-4 rounded-full hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105"
+                    onClick={() => handleViewDetails(product)}
+                  >
+                    View Details
+                  </button>
+                </div>
+              </div>
+              <div className="p-4 flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-semibold mb-2 text-center">{product.name}</h3>
+                  <div className="flex justify-center items-center space-x-2 mb-3">
+                    <p className="text-[#7fba00] font-bold text-xl">${product.price.toFixed(2)}</p>
+                    <p className="text-gray-500 line-through text-sm">${product.originalPrice.toFixed(2)}</p>
+                  </div>
+                </div>
+                <div className="flex flex-col space-y-2">
+                  <button className="bg-[#7fba00] text-white font-semibold py-2 px-4 rounded-full hover:bg-[#6ca300] transition duration-300 ease-in-out transform hover:scale-105">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         ))}
