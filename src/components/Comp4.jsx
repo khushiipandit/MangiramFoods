@@ -15,13 +15,13 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="w-64 h-96 p-4 bg-white m-2 rounded-lg shadow-md flex flex-col justify-between cursor-pointer transition-transform duration-300 hover:scale-105" onClick={handleViewDetails}>
+    <div className="w-64 h-auto p-4 bg-white m-2 rounded-lg shadow-md flex flex-col justify-between cursor-pointer transition-transform duration-300 hover:scale-105" onClick={handleViewDetails}>
       <div>
         <div className="flex gap-2 mb-2">
           <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs">NEW</span>
           <span className="bg-cyan-500 text-white px-3 py-1 rounded-full text-xs">SALE</span>
         </div>
-        <img src={product.image} alt={product.name} className="w-full h-40 object-contain mb-4" />
+        <img src={product.imageSrc} alt={product.name} className="w-full h-44 object-center mb-4" />
         <div className="text-center">
           <div className="text-xs text-gray-600 uppercase tracking-wide mb-1">ORGANIC FRUITS</div>
           <div className="text-lg font-bold text-gray-800 mb-2 capitalize">fresh {product.name}</div>

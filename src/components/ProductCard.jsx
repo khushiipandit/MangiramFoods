@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
       <Link to={`/product/${product.id}`} state={{ product }} className="product-card">
         <div className="flex items-center bg-white border border-zinc-300 p-4 rounded-lg shadow-sm flex-col">
           <div className='w-full flex'>
-            <img src={product.image} alt={product.name} className="w-28 h-28 object-contain mr-4" />
+            <img src={product.imageSrc} alt={product.name} className="w-28 h-28 object-center mr-4" />
             <div className="flex-grow">
               <h3 className="text-lg font-normal text-gray-700 mb-1">{product.name}</h3>
               <div className="flex items-center">
