@@ -10,9 +10,9 @@ const Footer = () => {
           <div className="w-12 h-0.5 bg-green-600"></div>
           <p className="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
           <div className="space-y-2 text-sm text-gray-600">
-            <p className="flex items-center"><span className="material-icons mr-2 text-green-600 text-base sm:text-lg  fa-solid fa-location-dot"></span>100 highland ave, california, united state</p>
+            <p className="flex items-center"><span className="material-icons mr-2 text-green-600 text-base sm:text-lg  fa-solid fa-location-dot"></span>Karawal Nagar Main Rd, Block E, Tukhmirpur, Delhi, 110094</p>
             <p className="flex items-center"><span className="material-icons mr-2 text-green-600 text-base sm:text-lg fa-solid fa-envelope"></span>contact@The Maangerams.com</p>
-            <p><span className="font-semibold fa-solid fa-phone material-icons mr-2 text-green-600 text-base sm:text-lg"></span> +91 8826909487 </p>
+            <p><span className="font-semibold fa-solid fa-phone material-icons mr-2 text-green-600 text-base sm:text-lg"></span> +91 9643200339 (Customer Care) </p>
           </div>
         </div>
 

@@ -51,7 +51,7 @@ const ContactPage = () => {
           {/* Map placeholder */}
           <div className="w-full md:w-2/3">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158857.84156786223!2d-0.26674938150537053!3d51.528739323220805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sin!4v1725959812022!5m2!1sen!2sin" 
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3499.367640909048!2d77.25970077550359!3d28.7085570756233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDQyJzMwLjgiTiA3N8KwMTUnNDQuMiJF!5e0!3m2!1sen!2sin!4v1726490333603!5m2!1sen!2sin" 
               width="100%" 
               height="400" 
               style={{border:0}} 
@@ -68,11 +68,11 @@ const ContactPage = () => {
 
             <div className="space-y-4 text-gray-700">
               <p className="font-semibold text-green-600">The Maangerams STORE</p>
-              <p>142 West newton, NY 19088, United States</p>
+              <p>Karawal Nagar Main Rd, Block E, Tukhmirpur, Delhi, 110094</p>
 
               <div>
-                <p><span className="font-semibold">Call:</span> +91 8826909487 <br /> +91 9643200339 <br /> +91 8868051759</p>
-                <p><span className="font-semibold">Email:</span> info@montero.com</p>
+                <p><span className="font-semibold">Call:</span> +91 8826909487,+91 8868051759 <br />Customer Care:  +91 9643200339 </p>
+                <p><span className="font-semibold">Email:</span>the.maangerams@gmail.com</p>
                 
                 <p><span className="font-semibold">Instagram:</span> @themaangerams</p>
               </div>
