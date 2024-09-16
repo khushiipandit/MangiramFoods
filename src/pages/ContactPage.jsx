@@ -71,11 +71,10 @@ const ContactPage = () => {
               <p>142 West newton, NY 19088, United States</p>
 
               <div>
-                <p><span className="font-semibold">Call:</span> +7 (100) 2234 999</p>
+                <p><span className="font-semibold">Call:</span> +91 8826909487 <br /> +91 9643200339 <br /> +91 8868051759</p>
                 <p><span className="font-semibold">Email:</span> info@montero.com</p>
-                <p><span className="font-semibold">Skype:</span> Montero.Property</p>
-                <p><span className="font-semibold">Facebook:</span> Montero.facebook</p>
-                <p><span className="font-semibold">Twitter:</span> @Montero.Property</p>
+                
+                <p><span className="font-semibold">Instagram:</span> @themaangerams</p>
               </div>
             </div>
           </div>

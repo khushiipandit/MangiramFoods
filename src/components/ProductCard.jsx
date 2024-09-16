@@ -14,7 +14,7 @@ const ProductCard = ({ product }) => {
           }
         `}
       </style>
-      <Link to={`/product/${product.name}`} state={{ product }} className="product-card">
+      <Link to={`/product/${product.id}`} state={{ product }} className="product-card">
         <div className="flex items-center bg-white border border-zinc-300 p-4 rounded-lg shadow-sm flex-col">
           <div className='w-full flex'>
             <img src={product.image} alt={product.name} className="w-28 h-28 object-contain mr-4" />

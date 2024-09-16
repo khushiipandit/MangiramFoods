@@ -1,56 +1,30 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import ProductCard from '/src/components/ProductCard';
+import { products } from '../data/products';
 
 const ProductsShowcase = () => {
-  const products = [
-    {
-      name: 'organic blackberry',
-      price: 50.00,
-      oldPrice: 55.00,
-      image: '/images/cherry.png',
-    },
-    {
-      name: 'organic strawberry',
-      price: 50.00,
-      image: '/images/tamatar.png',
-    },
-    {
-      name: 'organic grapes',
-      price: 50.00,
-      image: '/images/spinach.png',
-    },
-    {
-      name: 'organic peach',
-      price: 50.00,
-      image: '/images/pineapple.png',
-    },
-    {
-      name: 'organic mushroom',
-      price: 50.00,
-      image: '/images/tea.png',
-    },
-    {
-      name: 'organic blackberry',
-      price: 50.00,
-      oldPrice: 60.00,
-      image: '/images/cup.png',
-    },
-    {
-      name: 'organic redberry',
-      price: 50.00,
-      image: '/images/juce.png',
-    },
-    {
-      name: 'organic apple',
-      price: 50.00,
-      image: '/images/tomato.png',
-    },
-    {
-      name: 'organic beans',
-      price: 50.00,
-      image: '/images/cherry.png',
-    },
-  ];
+  const showcaseProducts = useMemo(() => {
+    const newArrivals = products.filter(p => p.isNew && p.toShowcase).slice(0, 3);
+    const bestSellers = products.filter(p => p.onSale && p.toShowcase).slice(0, 3);
+    
+    // If we don't have enough showcase products, fill with other new/on sale products
+    if (newArrivals.length < 3) {
+      const additionalNew = products.filter(p => p.isNew && !p.toShowcase).slice(0, 3 - newArrivals.length);
+      newArrivals.push(...additionalNew);
+    }
+    if (bestSellers.length < 3) {
+      const additionalBest = products.filter(p => p.onSale && !p.toShowcase).slice(0, 3 - bestSellers.length);
+      bestSellers.push(...additionalBest);
+    }
+
+    // For random products, exclude those already shown and prioritize showcase
+    const shownProductIds = [...newArrivals, ...bestSellers].map(p => p.id);
+    const remainingShowcase = products.filter(p => p.toShowcase && !shownProductIds.includes(p.id));
+    const remainingOthers = products.filter(p => !p.toShowcase && !shownProductIds.includes(p.id));
+    const randomProducts = [...remainingShowcase, ...remainingOthers].slice(0, 3);
+
+    return { newArrivals, bestSellers, randomProducts };
+  }, []);
 
   return (
     <div className="bg-white px-4 sm:px-8 md:px-16 lg:px-24 py-12 mb-10">
@@ -66,8 +40,8 @@ const ProductsShowcase = () => {
             <h2 className="text-xs tracking-[0.25rem] text-zinc-600 mb-1">NEW FROM THE FARM</h2>
             <h3 className="text-2xl font-light mb-6 text-zinc-700">organic <span className="font-bold">new arrivals</span></h3>
             <div className="space-y-4">
-              {products.slice(0, 3).map((product, index) => (
-                <ProductCard key={index} product={product} />
+              {showcaseProducts.newArrivals.map((product) => (
+                <ProductCard key={product.id} product={product} />
               ))}
             </div>
           </div>
@@ -75,8 +49,8 @@ const ProductsShowcase = () => {
             <h2 className="text-xs tracking-[0.25rem] text-zinc-600 mb-1">BEST SELLER</h2>
             <h3 className="text-2xl font-light mb-6 text-zinc-700">organic <span className="font-bold">popular</span></h3>
             <div className="space-y-4">
-              {products.slice(3, 6).map((product, index) => (
-                <ProductCard key={index} product={product} />
+              {showcaseProducts.bestSellers.map((product) => (
+                <ProductCard key={product.id} product={product} />
               ))}
             </div>
           </div>
@@ -84,8 +58,8 @@ const ProductsShowcase = () => {
             <h2 className="text-xs tracking-[0.25rem] text-zinc-600 mb-1">CUSTOMER NEEDS</h2>
             <h3 className="text-2xl font-light mb-6 text-zinc-700">organic <span className="font-bold">random</span></h3>
             <div className="space-y-4">
-              {products.slice(6, 9).map((product, index) => (
-                <ProductCard key={index} product={product} />
+              {showcaseProducts.randomProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
               ))}
             </div>
           </div>

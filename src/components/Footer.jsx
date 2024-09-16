@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="space-y-2 text-sm text-gray-600">
             <p className="flex items-center"><span className="material-icons mr-2 text-green-600 text-base sm:text-lg  fa-solid fa-location-dot"></span>100 highland ave, california, united state</p>
             <p className="flex items-center"><span className="material-icons mr-2 text-green-600 text-base sm:text-lg fa-solid fa-envelope"></span>contact@The Maangerams.com</p>
-            <p className="flex items-center"><span className="material-icons mr-2 text-green-600 text-base sm:text-lg fa-solid fa-globe"></span>www.The Maangerams.com</p>
+            <p><span className="font-semibold fa-solid fa-phone material-icons mr-2 text-green-600 text-base sm:text-lg"></span> +91 8826909487 </p>
           </div>
         </div>
 

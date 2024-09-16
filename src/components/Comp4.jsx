@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { products } from '../data/products';
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
 
   const handleViewDetails = () => {
-    navigate(`/product/${product.name}`, { state: { product } });
+    navigate(`/product/${product.id}`, { state: { product } });
   };
 
   const handleBuyNow = (e) => {
@@ -46,14 +47,8 @@ const Comp4 = () => {
   const [startAnimation, setStartAnimation] = useState(false);
   const cardsRef = useRef(null);
 
-  const products = [
-    { name: 'Cherry', image: '/images/deal-1.png', oldPrice: 65.00, price: 50.00 },
-    { name: 'Pineapple', image: '/images/deal-2.png', oldPrice: 65.00, price: 50.00 },
-    { name: 'Apple', image: '/images/deal-1.png', oldPrice: 75.00, price: 60.00 },
-    { name: 'Banana', image: '/images/deal-2.png', oldPrice: 80.00, price: 70.00 },
-  ];
-
-  const allProducts = [...products, ...products, ...products];
+  const onSaleProducts = products.filter(product => product.onSale);
+  const allProducts = [...onSaleProducts, ...onSaleProducts, ...onSaleProducts];
 
   useEffect(() => {
     const observer = new IntersectionObserver(

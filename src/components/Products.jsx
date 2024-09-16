@@ -1,77 +1,33 @@
-  import React, { useState } from 'react';
+  import React, { useState, useMemo } from 'react';
   import { Link } from 'react-router-dom';
   import ProductCard from './Card';
-  import Slider from 'react-slick';
-  import 'slick-carousel/slick/slick.css';
-  import 'slick-carousel/slick/slick-theme.css';
-import { useNavigate } from 'react-router-dom';
-
-
-// export const ProductCard = ({ product }) => {
-//   const navigate = useNavigate();
-
-//   const handleViewDetails = () => {
-//     navigate(`/product/${product.name}`, { state: { product } });
-//   };
-
-//   return (
-//     <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-xl border border-slate-200 hover:border-slate-300">
-//       <div className="relative overflow-hidden group">
-//         <img 
-//           src={product.image} 
-//           alt={product.name} 
-//           className="w-full h-32 my-6 object-contain transition duration-300 ease-in-out group-hover:scale-105"
-//         />
-//         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
-//           <button 
-//             className="bg-white text-gray-800 font-semibold py-2 px-4 rounded-full hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105"
-//             onClick={handleViewDetails}
-//           >
-//             View Details
-//           </button>
-//         </div>
-//       </div>
-//       <div className="p-4 flex-grow flex flex-col justify-between">
-//         <div>
-//           <h3 className="text-lg font-semibold mb-2 text-center">{product.name}</h3>
-//           <div className="flex justify-center items-center space-x-2 mb-3">
-//             <p className="text-[#7fba00] font-bold text-xl">${product.price.toFixed(2)}</p>
-//             <p className="text-gray-500 line-through text-sm">${(product.price * 1.2).toFixed(2)}</p>
-//           </div>
-//         </div>
-//         <div className="flex flex-col space-y-2">
-//           <button className="bg-[#7fba00] text-white font-semibold py-2 px-4 rounded-full hover:bg-[#6ca300] transition duration-300 ease-in-out transform hover:scale-105">
-//             Buy Now
-//           </button>
-          
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
+  import { products } from '../data/products';
 
   export const Products = () => {
-    const categories = ['organic fruits', 'organic vegetables', 'organic dried fruits', 'organic juices'];
+    const categories = [...new Set(products.map(product => product.category))];
     const [activeCategory, setActiveCategory] = useState('all');
 
-    const products = [
-      { id: 1, name: 'Organic Tomato', price: 50.00, image: '/images/products-head-fruit.png', category: 'organic vegetables' },
-      { id: 2, name: 'Organic Cabbage', price: 50.00, image: '/images/products-head-fruit.png', category: 'organic vegetables' },
-      { id: 3, name: 'Organic Cherry', price: 50.00, image: '/images/products-head-fruit.png', category: 'organic fruits' },
-      { id: 4, name: 'Organic Salad', price: 50.00, image: '/images/products-head-fruit.png', category: 'organic vegetables' },
-      { id: 5, name: 'Organic Pineapple', price: 50.00, image: '/images/products-head-fruit.png', category: 'organic fruits' },
-      { id: 6, name: 'Organic Pineapple', price: 50.00, image: '/images/products-head-fruit.png', category: 'organic fruits' },
+    // Function to shuffle an array
+    const shuffleArray = (array) => {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    };
 
-      { id: 7, name: 'Organic Pineapple', price: 50.00, image: '/images/products-head-fruit.png', category: 'organic fruits' },
-       { id: 8, name: 'Organic Pineapple', price: 50.00, image: '/images/products-head-fruit.png', category: 'organic fruits' },
-      
-        
+    // Memoize the filtered and shuffled products
+    const displayProducts = useMemo(() => {
+      const dairyProducts = shuffleArray(products.filter(p => p.category === 'Dairy')).slice(0, 3);
+      const vegetableProducts = shuffleArray(products.filter(p => p.category === 'Vegetables')).slice(0, 3);
+      const fruitProducts = shuffleArray(products.filter(p => p.category === 'Fruits')).slice(0, 3);
 
-    ];
+      return [...dairyProducts, ...vegetableProducts, ...fruitProducts];
+    }, []);
 
     const filteredProducts = activeCategory === 'all' 
-      ? products 
-      : products.filter(product => product.category === activeCategory);
+      ? displayProducts 
+      : displayProducts.filter(product => product.category === activeCategory);
 
     const handleCategoryClick = (category) => {
       setActiveCategory(prev => prev === category ? 'all' : category);

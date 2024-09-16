@@ -31,7 +31,7 @@ const Comp3 = () => {
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row items-center justify-center mb-8">
                     <div className="md:w-1/2 mb-6 md:mb-0">
-                        <h5 className="text-sm tracking-wider text-gray-500 uppercase mb-2">NATURIX DEAL OF THE DAY</h5>
+                        <h5 className="text-sm tracking-wider text-gray-500 uppercase mb-2">The Maangerams DEAL OF THE DAY</h5>
                         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-gray-800 mb-4">
                             organic goods <span className="text-[#4e8734] font-semibold">50% off</span>
                         </h1>
